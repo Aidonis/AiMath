@@ -33,8 +33,8 @@ namespace AiMath{
 		Vector2 operator / (const float& a_Scalar);
 		Vector2 operator /= (const float& a_Scalar);
 
-		Vector2 operator = (const float& a_Source);
-		bool operator == (const float& a_Source);
+		Vector2 operator = (const Vector2& a_Source);
+		bool operator == (const Vector2& a_Source);
 
 	};
 }
