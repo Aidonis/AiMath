@@ -27,22 +27,22 @@ namespace AiMath
 	}
 
 	//Sum of Vector 2 and scalar
-	Vector2 Vector2::operator + (const float& a_addScalar){
+	Vector2 Vector2::operator + (const float& a_addNum){
 		Vector2 temp;
-		temp.x = x + a_addScalar;
-		temp.y = y + a_addScalar;
+		temp.x = x + a_addNum;
+		temp.y = y + a_addNum;
 
 		//Return sum of Vector2 and scalar
 		return temp;
 	}
 
-	Vector2	Vector2::operator += (const Vector2& a_addVector){
+	Vector2&	Vector2::operator += (const Vector2& a_addVector){
 		(*this) = (*this) + a_addVector;
 		return (*this);
 	}
 
-	Vector2 Vector2::operator += (const float& a_addScalar){
-		(*this) = (*this) + a_addScalar;
+	Vector2& Vector2::operator += (const float& a_addNum){
+		(*this) = (*this) + a_addNum;
 		return(*this);
 	}
 
@@ -59,21 +59,21 @@ namespace AiMath
 	}
 
 	//Sum of Vector 2 and scalar
-	Vector2 Vector2::operator - (const float& a_diffScalar){
+	Vector2 Vector2::operator - (const float& a_subNum){
 		Vector2 temp;
-		temp.x = x - a_diffScalar;
-		temp.y = y - a_diffScalar;
+		temp.x = x - a_subNum;
+		temp.y = y - a_subNum;
 
 		//Return sum of Vector2 and scalar
 		return temp;
 	}
 
-	Vector2 Vector2::operator -=(const Vector2& a_subVector){
+	Vector2& Vector2::operator -=(const Vector2& a_subVector){
 		(*this) = (*this) - a_subVector;
 		return (*this);
 	}
 
-	Vector2 Vector2::operator -=(const float& a_subScalar){
+	Vector2& Vector2::operator -=(const float& a_subScalar){
 		(*this) = (*this) - a_subScalar;
 		return (*this);
 	}
@@ -87,7 +87,7 @@ namespace AiMath
 		temp.y *= a_Scalar;
 	}
 
-	Vector2 Vector2::operator *= (const float& a_Scalar){
+	Vector2& Vector2::operator *= (const float& a_Scalar){
 		(*this) = (*this) * a_Scalar;
 		return (*this);
 	}
@@ -101,14 +101,14 @@ namespace AiMath
 		temp.y /= a_Scalar;
 	}
 
-	Vector2 Vector2::operator /= (const float& a_Scalar){
-		(*this) = (*this) * a_Scalar;
+	Vector2& Vector2::operator /= (const float& a_Scalar){
+		(*this) = (*this) / a_Scalar;
 		return (*this);
 	}
 
 	//Assignment Operator
 
-	Vector2 Vector2::operator = (const Vector2& a_Source){
+	Vector2& Vector2::operator = (const Vector2& a_Source){
 
 		if (this == &a_Source){
 			return (*this);
