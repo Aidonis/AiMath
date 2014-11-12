@@ -55,5 +55,55 @@ namespace AiMath{
 		bool operator== (const Vector2& a_Source);
 
 	};
+
+	class Vector3{
+	public:
+		Vector3();
+		~Vector3();
+
+		Vector3(float a_x, float a_y, float a_z);
+
+		float x, y, z;
+
+		//Euler angle between two Vector3
+		float EulerAngle(const Vector3& a_Vector);
+
+		//Dot Product between two Vector3
+		float DotProduct(const Vector3& a_Vector);
+
+		//Normalized Vector3
+		Vector3 Normal();
+		void Normalize();
+
+		//Magnitude of Vector3
+		float Magnitude();
+
+		//Linear Interpolation
+		Vector3 Lerp(const Vector3& a_TerminatingVector, const float& a_InterpolationPoint);
+
+		//Operators
+
+		Vector3 operator+ (const Vector3& a_addVector);  //
+		Vector3 operator+ (const float& a_addScalar);  //
+
+		Vector3& operator+= (const Vector3& a_addVector);  //
+		Vector3& operator+= (const float& a_addScalar);  //
+
+		Vector3 operator- (const Vector3& a_subVector);  //
+		Vector3 operator- (const float& a_subScalar);  //
+
+		Vector3& operator-= (const Vector3& a_subVector); //
+		Vector3& operator-= (const float& a_subScalar); //
+
+		Vector3 operator* (const float& a_Scalar);
+		Vector3& operator*= (const float& a_Scalar);
+
+		Vector3 operator/ (const float& a_Scalar);
+		Vector3& operator/= (const float& a_Scalar);
+
+		Vector3& operator= (const Vector3& a_Source);
+		bool operator== (const Vector3& a_Source);
+
+	};
 }
 #endif
