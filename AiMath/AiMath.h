@@ -118,11 +118,11 @@ namespace AiMath{
 			const float& a_01,
 			const float& a_02,
 			const float& a_10,
-			const float& a_,
-			const float& a_5,
-			const float& a_6,
-			const float& a_7,
-			const float& a_8);
+			const float& a_11,
+			const float& a_12,
+			const float& a_20,
+			const float& a_21,
+			const float& a_22);
 
 
 		Matrix3(const Matrix3 &a_Source);
@@ -135,7 +135,7 @@ namespace AiMath{
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
 
-		static Matrix3 IdentityMatrix();
+		static Matrix3 Identity();
 
 		Vector3 Scale(const Vector3 &a_Vector);
 
