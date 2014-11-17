@@ -71,6 +71,8 @@ namespace AiMath{
 		//Dot Product between two Vector3
 		float DotProduct(const Vector3& a_Vector);
 
+		Vector3 CrossProduct(const Vector3 &a_Term);
+
 		//Normalized Vector3
 		Vector3 Normal();
 		void Normalize();
@@ -104,6 +106,62 @@ namespace AiMath{
 		Vector3& operator= (const Vector3& a_Source);
 		bool operator== (const Vector3& a_Source);
 
+	};
+
+	class Matrix3
+	{
+	public:
+
+		Matrix3();
+
+		Matrix3(const float& a_00,
+			const float& a_01,
+			const float& a_02,
+			const float& a_10,
+			const float& a_,
+			const float& a_5,
+			const float& a_6,
+			const float& a_7,
+			const float& a_8);
+
+
+		Matrix3(const Matrix3 &a_Source);
+
+		float matrix[3][3];
+
+		~Matrix3();
+
+		void Transpose();
+
+		Vector3 VectorTransform(const Vector3 &a_Point);
+
+		static Matrix3 IdentityMatrix();
+
+		Vector3 Scale(const Vector3 &a_Vector);
+
+		static Matrix3 MakeXRotationMatrix(float a_Radians);
+		static Matrix3 MakeYRotationMatrix(float a_Radians);
+		static Matrix3 MakeZRotationMatrix(float a_Radians);
+
+		//Operators
+		Matrix3	operator+ (const Matrix3& a_AddMatrix);
+		Matrix3	operator+ (const float& a_AddScalar);
+		Matrix3	operator+= (const Matrix3& a_AddMatrix);
+		Matrix3	operator+= (const float& a_AddScalar);
+
+		Matrix3	operator- (const Matrix3& a_SubMatrix);
+		Matrix3	operator- (const float& a_SubScalar);
+		Matrix3	operator-= (const Matrix3& a_SubMatrix);
+		Matrix3	operator-= (const float& a_SubScalar);
+
+		Matrix3	operator* (const Matrix3& a_FactorMatrix);
+		Matrix3	operator* (const float& a_FactorScalar);
+		Matrix3	operator*= (const Matrix3& a_FactorMatrix);
+		Matrix3	operator*= (const float& a_FactorScalar);
+
+		Matrix3 operator= (const Matrix3& a_Source);
+		const bool operator== (const Matrix3& a_Term);
+		const bool operator!= (const Matrix3& a_Term);
 	};
 }
 #endif

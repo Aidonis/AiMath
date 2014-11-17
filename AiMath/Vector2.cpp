@@ -37,6 +37,8 @@ namespace AiMath
 		Vector2 temp = (*this);
 		float magnitude = Magnitude();
 		temp /= magnitude;
+
+		return temp;
 	}
 	void  Vector2::Normalize(){
 		float mag = Magnitude();
@@ -135,6 +137,8 @@ namespace AiMath
 
 		temp.x *= a_Scalar;
 		temp.y *= a_Scalar;
+
+		return temp;
 	}
 
 	Vector2& Vector2::operator*= (const float& a_Scalar){
@@ -149,6 +153,8 @@ namespace AiMath
 
 		temp.x /= a_Scalar;
 		temp.y /= a_Scalar;
+
+		return temp;
 	}
 
 	Vector2& Vector2::operator/= (const float& a_Scalar){

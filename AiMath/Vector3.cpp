@@ -156,6 +156,8 @@ namespace AiMath
 		temp.x *= a_Scalar;
 		temp.y *= a_Scalar;
 		temp.z *= a_Scalar;
+
+		return temp;
 	}
 
 	Vector3& Vector3::operator*= (const float& a_Scalar){
@@ -171,6 +173,8 @@ namespace AiMath
 		temp.x /= a_Scalar;
 		temp.y /= a_Scalar;
 		temp.z /= a_Scalar;
+
+		return temp;
 	}
 
 	Vector3& Vector3::operator/= (const float& a_Scalar){
