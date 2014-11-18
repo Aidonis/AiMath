@@ -48,5 +48,17 @@ TEST(vector2, normalize){
 	EXPECT_TRUE(v2 == v1);
 }
 
+TEST(vector2, magnitude){
+	Vector2 v1(30, 40);
+	EXPECT_TRUE(50 == v1.Magnitude());
+}
+
+TEST(vector2, Lerp){
+	Vector2 v1(30, 40);
+	Vector2 v2(10, 20);
+	Vector2 v3(50, 60);
+	EXPECT_TRUE(v3 == v1.Lerp(v2, 50));
+}
+
 
 #endif
