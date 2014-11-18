@@ -10,6 +10,11 @@ header file defines public API for Google test, needs to be included for any tes
 
 using AiMath::Vector2;
 
+TEST(vector2, equality){
+	Vector2 v1(5, 7);
+	EXPECT_TRUE(v1 == v1);
+}
+
 TEST(vector2, constructorDefault)
 {
 	Vector2 v;
@@ -29,10 +34,19 @@ TEST(vector2, dotProduct){
 	EXPECT_FLOAT_EQ(57, v1.DotProduct(v2));
 }
 
-TEST(vector2, normal){
+TEST(vector2, getNormal){
 	Vector2 v1(30, 40);
-	v1.Normal();
+	Vector2 v2(.6, .8);
+	EXPECT_TRUE(v2 == v1.getNormal());
 
 }
+
+TEST(vector2, normalize){
+	Vector2 v1(30, 40);
+	Vector2 v2 = v1.getNormal();
+	v1.Normalize();
+	EXPECT_TRUE(v2 == v1);
+}
+
 
 #endif

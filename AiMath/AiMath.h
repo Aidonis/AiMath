@@ -22,7 +22,7 @@ namespace AiMath{
 		float DotProduct(const Vector2& a_Vector);
 
 		//Normalized Vector2
-		Vector2 Normal();
+		Vector2 getNormal();
 		void Normalize();
 
 		//Magnitude of Vector2
