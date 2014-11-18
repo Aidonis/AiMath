@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AiMath", "AiMath\AiMath.vcxproj", "{AB62479B-4034-46E1-AD45-DF97A0F0BA03}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unit_Test_AiMath", "Unit_Test_AiMath\Unit_Test_AiMath.vcxproj", "{9E8D34AC-15A7-4FEC-A8A4-A8346303A172}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{AB62479B-4034-46E1-AD45-DF97A0F0BA03}.Debug|Win32.Build.0 = Debug|Win32
 		{AB62479B-4034-46E1-AD45-DF97A0F0BA03}.Release|Win32.ActiveCfg = Release|Win32
 		{AB62479B-4034-46E1-AD45-DF97A0F0BA03}.Release|Win32.Build.0 = Release|Win32
+		{9E8D34AC-15A7-4FEC-A8A4-A8346303A172}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E8D34AC-15A7-4FEC-A8A4-A8346303A172}.Debug|Win32.Build.0 = Debug|Win32
+		{9E8D34AC-15A7-4FEC-A8A4-A8346303A172}.Release|Win32.ActiveCfg = Release|Win32
+		{9E8D34AC-15A7-4FEC-A8A4-A8346303A172}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
