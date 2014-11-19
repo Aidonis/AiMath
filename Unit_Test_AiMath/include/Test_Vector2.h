@@ -36,7 +36,7 @@ TEST(vector2, dotProduct){
 
 TEST(vector2, getNormal){
 	Vector2 v1(30, 40);
-	Vector2 v2(.6, .8);
+	Vector2 v2(0.6, 0.8);
 	EXPECT_TRUE(v2 == v1.getNormal());
 
 }
@@ -54,10 +54,10 @@ TEST(vector2, magnitude){
 }
 
 TEST(vector2, Lerp){
-	Vector2 v1(30, 40);
-	Vector2 v2(10, 20);
-	Vector2 v3(50, 60);
-	EXPECT_TRUE(v3 == v1.Lerp(v2, 50));
+	Vector2 v1(10, 20);
+	Vector2 v2(30, 40);
+	Vector2 v3(20, 30);
+	EXPECT_TRUE(v3 == v1.Lerp(v2, 0.5));
 }
 
 

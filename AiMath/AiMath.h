@@ -29,7 +29,7 @@ namespace AiMath{
 		float Magnitude();
 
 		//Linear Interpolation
-		Vector2 Lerp(const Vector2& a_TerminatingVector, const float& a_InterpolationPoint);
+		Vector2 Lerp(const Vector2& a_TerminatingVector, const float& a_InterpPoint);
 
 		//Operators
 

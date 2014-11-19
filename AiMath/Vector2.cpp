@@ -50,16 +50,13 @@ namespace AiMath
 		return sqrt(first + second);
 	}
 
-	Vector2 Vector2::Lerp(const Vector2& a_endVector, const float& a_point){
-		Vector2 LerpVector;
-		LerpVector.x = a_point;
+	Vector2 Vector2::Lerp(const Vector2& a_endVector, const float& a_interpPoint){
+		Vector2 start = (*this);
+		Vector2 end = a_endVector;
 
-		float InterpY = ((a_point - x) * (a_endVector.y - y)) / (a_endVector.x - x);
-		InterpY += y;
+		Vector2 InterpolatedVector = (*this) + (end - start) * a_interpPoint;
 
-		LerpVector.y = InterpY;
-
-		return LerpVector;
+		return InterpolatedVector;
 	}
 
 	//Operators
