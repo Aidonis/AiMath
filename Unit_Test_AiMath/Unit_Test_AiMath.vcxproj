@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0\msvc\gtest-md\Debug\;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0;C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\GoogleTest\msvc\gtest-md\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\GoogleTest\;$(SolutionDir)..\GoogleTest\include\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0\msvc\gtest-md\Release;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0;C:\Users\aidan.nabass\Downloads\gtest-1.7.0\gtest-1.7.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\GoogleTest\msvc\gtest-md\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\GoogleTest\;$(SolutionDir)..\..\GoogleTest\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

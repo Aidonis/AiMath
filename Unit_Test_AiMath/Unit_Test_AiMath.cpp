@@ -4,8 +4,8 @@
 #include "stdafx.h"
 #include <iostream>
 
-#include "gtest\gtest.h"
-#include "include\Test_Vector2.h"
+#include "gtest/gtest.h"
+#include "include/Test_Vector2.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])
