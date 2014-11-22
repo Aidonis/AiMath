@@ -6,6 +6,7 @@
 
 #include "gtest/gtest.h"
 #include "include/Test_Vector2.h"
+#include "include/Test_Matrix3.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])

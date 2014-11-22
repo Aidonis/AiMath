@@ -59,21 +59,21 @@ namespace AiMath{
 		return temp;
 	}
 
-	Matrix3 Matrix3::Identity()
-	{
-		Matrix3 temp;
-		temp.matrix[0][0] = 1;
-		temp.matrix[0][1] = 0;
-		temp.matrix[0][2] = 0;
+	//Matrix3 Matrix3::Identity()
+	//{
+	//	Matrix3 temp;
+	//	temp.matrix[0][0] = 1;
+	//	temp.matrix[0][1] = 0;
+	//	temp.matrix[0][2] = 0;
 
-		temp.matrix[1][0] = 0;
-		temp.matrix[1][1] = 1;
-		temp.matrix[1][2] = 0;
+	//	temp.matrix[1][0] = 0;
+	//	temp.matrix[1][1] = 1;
+	//	temp.matrix[1][2] = 0;
 
-		temp.matrix[2][0] = 0;
-		temp.matrix[2][1] = 0;
-		temp.matrix[2][2] = 1;
+	//	temp.matrix[2][0] = 0;
+	//	temp.matrix[2][1] = 0;
+	//	temp.matrix[2][2] = 1;
 
-		return temp;
-	}
+	//	return temp;
+	//}
 }
