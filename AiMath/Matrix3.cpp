@@ -12,6 +12,20 @@ namespace AiMath{
 		}
 	}
 
+	Matrix3::Matrix3(const Matrix3& a_Matrix){
+		{
+			matrix[0][0] = a_Matrix.matrix[0][0];
+			matrix[0][1] = a_Matrix.matrix[0][1];
+			matrix[0][2] = a_Matrix.matrix[0][2];
+			matrix[1][0] = a_Matrix.matrix[1][0];
+			matrix[1][1] = a_Matrix.matrix[1][1];
+			matrix[1][2] = a_Matrix.matrix[1][2];
+			matrix[2][0] = a_Matrix.matrix[2][0];
+			matrix[2][1] = a_Matrix.matrix[2][1];
+			matrix[2][2] = a_Matrix.matrix[2][2];
+		}
+	}
+
 	Matrix3::Matrix3(
 		const float& a_00,
 		const float& a_01,
@@ -51,6 +65,23 @@ namespace AiMath{
 		temp[2][2] = matrix[2][2];
 	}
 
+	Matrix3 Matrix3::Identity(){
+		Matrix3 temp;
+		temp.matrix[0][0] = 1;
+		temp.matrix[0][1] = 0;
+		temp.matrix[0][2] = 0;
+
+		temp.matrix[1][0] = 0;
+		temp.matrix[1][1] = 1;
+		temp.matrix[1][2] = 0;
+
+		temp.matrix[2][0] = 0;
+		temp.matrix[2][1] = 0;
+		temp.matrix[2][2] = 1;
+
+		return temp;
+	}
+
 	Vector3 Matrix3::VectorTransform(const Vector3& a_Point){
 		Vector3 temp;
 		temp.x = a_Point.x * matrix[0][0] + a_Point.y * matrix[0][1] + a_Point.z * matrix[0][2];
@@ -58,22 +89,4 @@ namespace AiMath{
 		temp.x = a_Point.x * matrix[2][0] + a_Point.y * matrix[2][1] + a_Point.z * matrix[2][2];
 		return temp;
 	}
-
-	//Matrix3 Matrix3::Identity()
-	//{
-	//	Matrix3 temp;
-	//	temp.matrix[0][0] = 1;
-	//	temp.matrix[0][1] = 0;
-	//	temp.matrix[0][2] = 0;
-
-	//	temp.matrix[1][0] = 0;
-	//	temp.matrix[1][1] = 1;
-	//	temp.matrix[1][2] = 0;
-
-	//	temp.matrix[2][0] = 0;
-	//	temp.matrix[2][1] = 0;
-	//	temp.matrix[2][2] = 1;
-
-	//	return temp;
-	//}
 }

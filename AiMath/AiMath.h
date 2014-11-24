@@ -114,6 +114,8 @@ namespace AiMath{
 
 		Matrix3();
 
+		Matrix3(const Matrix3& a_Matrix3);
+
 		Matrix3(const float& a_00,
 			const float& a_01,
 			const float& a_02,
@@ -123,9 +125,6 @@ namespace AiMath{
 			const float& a_20,
 			const float& a_21,
 			const float& a_22);
-
-
-		Matrix3(const Matrix3 &a_Source);
 
 		float matrix[3][3];
 
