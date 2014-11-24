@@ -33,16 +33,24 @@ namespace AiMath
 		return (x * a_Vector.x) + (y * a_Vector.y);
 	}
 
+	//Return the normalized values of the Vector2. Does not modify original
 	Vector2 Vector2::getNormal(){
 		Vector2 temp = (*this);
 		temp.Normalize();
 		return temp;
 	}
+
+	//Normalize the original Vector2
 	void  Vector2::Normalize(){
 		float mag = Magnitude();
-		*this /= mag;
+
+		//Check for divide by 0
+		if (mag){
+			*this /= mag;
+		}
 	}
 
+	//Return the Magnitude of Vector2
 	float  Vector2::Magnitude(){
 		float first = x * x;
 		float second = y * y;

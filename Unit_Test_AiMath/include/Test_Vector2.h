@@ -46,6 +46,9 @@ TEST(vector2, normalize){
 	Vector2 v2 = v1.getNormal();
 	v1.Normalize();
 	EXPECT_TRUE(v2 == v1);
+	v1 = Vector2();
+	v2 = v1.getNormal();
+	EXPECT_TRUE(v2 == v1);
 }
 
 TEST(vector2, magnitude){
