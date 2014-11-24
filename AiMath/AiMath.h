@@ -74,7 +74,7 @@ namespace AiMath{
 		Vector3 CrossProduct(const Vector3 &a_Term);
 
 		//Normalized Vector3
-		Vector3 Normal();
+		Vector3 getNormal();
 		void Normalize();
 
 		//Magnitude of Vector3
@@ -131,6 +131,7 @@ namespace AiMath{
 		~Matrix3();
 
 		void Transpose();
+		Matrix3 GetTranspose();
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
 
@@ -158,7 +159,7 @@ namespace AiMath{
 		Matrix3	operator*= (const Matrix3& a_FactorMatrix);
 		Matrix3	operator*= (const float& a_FactorScalar);
 
-		Matrix3 operator= (const Matrix3& a_Source);
+		Matrix3& operator= (const Matrix3& a_Source);
 		const bool operator== (const Matrix3& a_Term);
 		const bool operator!= (const Matrix3& a_Term);
 	};

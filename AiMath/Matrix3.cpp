@@ -14,15 +14,7 @@ namespace AiMath{
 
 	Matrix3::Matrix3(const Matrix3& a_Matrix){
 		{
-			matrix[0][0] = a_Matrix.matrix[0][0];
-			matrix[0][1] = a_Matrix.matrix[0][1];
-			matrix[0][2] = a_Matrix.matrix[0][2];
-			matrix[1][0] = a_Matrix.matrix[1][0];
-			matrix[1][1] = a_Matrix.matrix[1][1];
-			matrix[1][2] = a_Matrix.matrix[1][2];
-			matrix[2][0] = a_Matrix.matrix[2][0];
-			matrix[2][1] = a_Matrix.matrix[2][1];
-			matrix[2][2] = a_Matrix.matrix[2][2];
+			*this = a_Matrix;
 		}
 	}
 
@@ -52,6 +44,7 @@ namespace AiMath{
 
 	}
 
+	//Transpose the matrix
 	void Matrix3::Transpose(){
 		float temp[3][3];
 		temp[0][0] = matrix[0][0];
@@ -63,6 +56,14 @@ namespace AiMath{
 		temp[2][0] = matrix[0][2];
 		temp[2][1] = matrix[1][2];
 		temp[2][2] = matrix[2][2];
+	}
+
+	//Returns a new matrix that's the transpose of the original
+	Matrix3 Matrix3::GetTranspose()
+	{
+		Matrix3 result = *this;
+		result.Transpose();
+		return result;
 	}
 
 	Matrix3 Matrix3::Identity(){
@@ -88,5 +89,44 @@ namespace AiMath{
 		temp.x = a_Point.x * matrix[1][0] + a_Point.y * matrix[1][1] + a_Point.z * matrix[1][2];
 		temp.x = a_Point.x * matrix[2][0] + a_Point.y * matrix[2][1] + a_Point.z * matrix[2][2];
 		return temp;
+	}
+
+	//Matrix3 Operators
+
+	//
+	Matrix3& Matrix3::operator= (const Matrix3& rhs)
+	{
+		for (int row = 0; row < 3; row++)
+		{
+			for (int col = 0; col < 3; col++)
+			{
+				matrix[row][col] = rhs.matrix[row][col];
+			}
+		}
+		return *this;
+	}
+
+	/*
+	Returns true if every element is equal to the element in the same position in the given matrix, else return false.
+	*/
+	bool operator== (const Matrix3& lhs, const Matrix3& rhs)
+	{
+		if (&lhs == &rhs)
+			return true;
+
+		for (int row = 0; row < 3; row++)
+		{
+			for (int col = 0; col < 3; col++)
+			{
+				if (lhs.matrix[row][col] != rhs.matrix[row][col])
+					return false;
+			}
+		}
+		return true;
+	}
+
+	bool operator!= (const Matrix3& lhs, const Matrix3& rhs)
+	{
+		return !(lhs == rhs);
 	}
 }

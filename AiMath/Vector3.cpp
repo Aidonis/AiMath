@@ -21,10 +21,10 @@ namespace AiMath
 
 	float Vector3::EulerAngle(const Vector3& a_Vector){
 		Vector3 VectorA = (*this);
-		VectorA = VectorA.Normal();
+		VectorA = VectorA.getNormal();
 
 		Vector3 VectorB = a_Vector;
-		VectorB = VectorB.Normal();
+		VectorB = VectorB.getNormal();
 
 		float euler = acos((VectorA).DotProduct(VectorB));
 
@@ -41,7 +41,7 @@ namespace AiMath
 					   (x * a_Term.y) - (y * a_Term.x));
 	}
 
-	Vector3 Vector3::Normal(){
+	Vector3 Vector3::getNormal(){
 		Vector3 temp = (*this);
 		float magnitude = Magnitude();
 		temp /= magnitude;
