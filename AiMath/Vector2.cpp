@@ -41,6 +41,7 @@ namespace AiMath
 	}
 
 	//Normalize the original Vector2
+	//Will return original Vector2 if Magnitude is 0
 	Vector2& Vector2::Normalize(){
 		float mag = Magnitude();
 

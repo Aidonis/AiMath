@@ -6,6 +6,19 @@
 
 namespace AiMath{
 	
+	enum MATRIX_MAJOR
+	{
+		ROW,
+		COL
+	};
+
+	enum AXIS
+	{
+		X,
+		Y,
+		Z
+	};
+
 	class Vector2{
 	public:
 		Vector2();
@@ -130,7 +143,9 @@ namespace AiMath{
 
 		~Matrix3();
 
-		void Transpose();
+		static Vector3 GetVector3(MATRIX_MAJOR type, int index, const Matrix3& matrix);
+
+		Matrix3& Transpose();
 		Matrix3 GetTranspose();
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
@@ -160,8 +175,11 @@ namespace AiMath{
 		Matrix3	operator*= (const float& a_FactorScalar);
 
 		Matrix3& operator= (const Matrix3& a_Source);
-		const bool operator== (const Matrix3& a_Term);
-		const bool operator!= (const Matrix3& a_Term);
+		friend bool operator== (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
+		friend bool operator==(const Vector3& lhs, const Vector3& rhs);
+		friend bool operator!= (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
+
+		float* operator[](int rhs);
 	};
 
 	class Matrix4

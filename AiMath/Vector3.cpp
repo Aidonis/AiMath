@@ -193,12 +193,15 @@ namespace AiMath
 		return (*this);
 	}
 
-	bool Vector3::operator== (const Vector3& a_Source){
-		if (x == a_Source.x && y == a_Source.y && z == a_Source.z){
+	bool Vector3::operator==(const Vector3& other)
+	{
+		//check if same object
+		if (this == &other)
 			return true;
-		}
-		else{
-			return false;
-		}
+		if (x == other.x &&
+			y == other.y &&
+			z == other.z)
+			return true;
+		return false;
 	}
 };

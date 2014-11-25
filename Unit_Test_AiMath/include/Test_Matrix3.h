@@ -8,10 +8,9 @@ header file defines public API for Google test, needs to be included for any tes
 
 #include "..\..\AiMath\AiMath.h"
 
-using AiMath::Matrix3;
+using namespace AiMath;
 
-TEST(matrix3, constructorDefault)
-{
+TEST(matrix3, constructorDefault){
 	Matrix3 m;
 
 	for (int row = 0; row < 3; row++)
@@ -23,8 +22,7 @@ TEST(matrix3, constructorDefault)
 	}
 }
 
-TEST(matrix3, constructor)
-{
+TEST(matrix3, constructor){
 	Matrix3 m(
 		10, 11, 12,
 		20, 21, 22,
@@ -42,4 +40,141 @@ TEST(matrix3, constructor)
 
 }
 
+TEST(matrix3, copyConstructor){
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+
+	Matrix3 m2(m);
+
+	EXPECT_TRUE(m2 == m);
+	//verify copy not same object
+	EXPECT_FALSE(&m2 == &m) << "expect: " << &m2 << "result: " << &m;
+}
+
+TEST(matrix3, equality){
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+	EXPECT_TRUE(m == m);
+}
+
+TEST(matrix3, Transpose){
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+
+	Matrix3 m2(
+		1, 4, 7,
+		2, 5, 8,
+		3, 6, 9);
+
+	m.Transpose();
+
+	EXPECT_TRUE(m == m2);
+
+}
+
+TEST(matrix3, GetTranspose){
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+
+	Matrix3 m2(
+		1, 4, 7,
+		2, 5, 8,
+		3, 6, 9);
+
+	EXPECT_TRUE(m.GetTranspose() == m2);
+}
+
+//Operator Tests
+TEST(matrix3, bracketOperator)
+{
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+	float* v = m[0];
+	float f = v[2];
+	EXPECT_EQ(3, f);
+
+	f = m[1][1];
+	EXPECT_EQ(5, f);
+}
+
+TEST(matrix3, doubleBracketOperator)
+{
+	Matrix3 m(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+
+	EXPECT_FLOAT_EQ(5, m[1][1]);
+	EXPECT_FLOAT_EQ(3, m[0][2]);
+
+	EXPECT_FLOAT_EQ(9, m[2][2]);
+}
+
+TEST(matrix3, getVector3FromMatrix){
+	Matrix3 mRow(
+		0, 1, 2,
+		3, 4, 5,
+		6, 7, 8);
+
+	Matrix3 mCol(
+		0, 3, 6,
+		1, 4, 7,
+		2, 5, 8);
+
+	Vector3 result = Matrix3::GetVector3(ROW, 0, mRow);
+	EXPECT_TRUE(result == Vector3(0, 1, 2));
+
+	result = Matrix3::GetVector3(ROW, 1, mRow);
+	EXPECT_TRUE(result == Vector3(3, 4, 5));
+
+	result = Matrix3::GetVector3(ROW, 2, mRow);
+	EXPECT_TRUE(result == Vector3(6, 7, 8));
+
+	result = Matrix3::GetVector3(COL, 0, mCol);
+	EXPECT_TRUE(result == Vector3(0, 1, 2));
+
+	result = Matrix3::GetVector3(COL, 1, mCol);
+	EXPECT_TRUE(result == Vector3(3, 4, 5));
+
+	result = Matrix3::GetVector3(COL, 2, mCol);
+	EXPECT_TRUE(result == Vector3(6, 7, 8));
+
+}
+
+TEST(matrix3, identity){
+	Matrix3 expect(
+		1, 0, 0,
+		0, 1, 0,
+		0, 0, 1);
+	EXPECT_TRUE(expect == Matrix3::Identity());
+}
+
+TEST(matrix3, transform)
+{
+	Matrix3 m(
+		3, 12, 3,
+		7, 10, 4,
+		0, 0, 1);
+	Vector3 v(8, 7, 2);
+	Vector3 result = m.VectorTransform(v);
+	Vector3 expected(114, 134, 2);
+
+	EXPECT_EQ(expected, result);
+	EXPECT_EQ(v, Vector3(8, 7, 2));
+	EXPECT_EQ(m, Matrix3(
+		3, 12, 3,
+		7, 10, 4,
+		0, 0, 1));
+
+}
 #endif

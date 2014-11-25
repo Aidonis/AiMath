@@ -44,18 +44,40 @@ namespace AiMath{
 
 	}
 
+	Vector3 Matrix3::GetVector3(MATRIX_MAJOR type, int index, const Matrix3& matrix)
+	{
+		float x, y, z;
+		if (type == ROW)
+		{
+			x = matrix.matrix[index][0];
+			y = matrix.matrix[index][1];
+			z = matrix.matrix[index][2];
+		}
+		else
+		{
+			x = matrix.matrix[0][index];
+			y = matrix.matrix[1][index];
+			z = matrix.matrix[2][index];
+		}
+		return Vector3(x, y, z);
+	}
+
 	//Transpose the matrix
-	void Matrix3::Transpose(){
-		float temp[3][3];
-		temp[0][0] = matrix[0][0];
-		temp[0][1] = matrix[1][0];
-		temp[0][2] = matrix[2][0];
-		temp[1][0] = matrix[0][1];
-		temp[1][1] = matrix[1][1];
-		temp[1][2] = matrix[2][1];
-		temp[2][0] = matrix[0][2];
-		temp[2][1] = matrix[1][2];
-		temp[2][2] = matrix[2][2];
+
+	//getVector3 needed
+
+	Matrix3& Matrix3::Transpose(){
+		Matrix3 result;
+		for (int row = 0; row < 3; row++){
+			//get the row'th column from this object
+			Vector3 v = Matrix3::GetVector3(COL, row, *this);
+			//set the temp matrix's row'th row to the vector's values
+			result.matrix[row][0] = v.x;
+			result.matrix[row][1] = v.y;
+			result.matrix[row][2] = v.z;
+		}
+		*this = result;
+		return *this;
 	}
 
 	//Returns a new matrix that's the transpose of the original
@@ -86,8 +108,8 @@ namespace AiMath{
 	Vector3 Matrix3::VectorTransform(const Vector3& a_Point){
 		Vector3 temp;
 		temp.x = a_Point.x * matrix[0][0] + a_Point.y * matrix[0][1] + a_Point.z * matrix[0][2];
-		temp.x = a_Point.x * matrix[1][0] + a_Point.y * matrix[1][1] + a_Point.z * matrix[1][2];
-		temp.x = a_Point.x * matrix[2][0] + a_Point.y * matrix[2][1] + a_Point.z * matrix[2][2];
+		temp.y = a_Point.x * matrix[1][0] + a_Point.y * matrix[1][1] + a_Point.z * matrix[1][2];
+		temp.z = a_Point.x * matrix[2][0] + a_Point.y * matrix[2][1] + a_Point.z * matrix[2][2];
 		return temp;
 	}
 
@@ -125,8 +147,22 @@ namespace AiMath{
 		return true;
 	}
 
+	bool operator==(const Vector3& lhs, const Vector3& rhs)
+	{
+		if (&lhs == &rhs)
+			return true;
+		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
+			return true;
+		return false;
+	}
+
 	bool operator!= (const Matrix3& lhs, const Matrix3& rhs)
 	{
 		return !(lhs == rhs);
+	}
+
+	float* Matrix3::operator[](int rhs)
+	{
+		return matrix[rhs];
 	}
 }
