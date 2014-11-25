@@ -23,7 +23,7 @@ namespace AiMath{
 
 		//Normalized Vector2
 		Vector2 getNormal();
-		void Normalize();
+		Vector2& Normalize();
 
 		//Magnitude of Vector2
 		float Magnitude();
@@ -75,13 +75,13 @@ namespace AiMath{
 
 		//Normalized Vector3
 		Vector3 getNormal();
-		void Normalize();
+		Vector3& Normalize();
 
 		//Magnitude of Vector3
 		float Magnitude();
 
 		//Linear Interpolation
-		Vector3 Lerp(const Vector3& a_TerminatingVector, const float& a_InterpolationPoint);
+		Vector3 Lerp(const Vector3& a_endVector, const float& a_percent);
 
 		//Operators
 

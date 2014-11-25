@@ -41,13 +41,14 @@ namespace AiMath
 	}
 
 	//Normalize the original Vector2
-	void  Vector2::Normalize(){
+	Vector2& Vector2::Normalize(){
 		float mag = Magnitude();
 
 		//Check for divide by 0
 		if (mag){
 			*this /= mag;
 		}
+		return (*this);
 	}
 
 	//Return the Magnitude of Vector2
@@ -62,7 +63,7 @@ namespace AiMath
 		Vector2 start = (*this);
 		Vector2 end = a_endVector;
 
-		Vector2 InterpolatedVector = (*this) + (end - start) * a_interpPoint;
+		Vector2 InterpolatedVector = start + (end - start) * a_interpPoint;
 
 		return InterpolatedVector;
 	}

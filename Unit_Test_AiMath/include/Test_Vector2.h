@@ -37,6 +37,8 @@ TEST(vector2, dotProduct){
 TEST(vector2, getNormal){
 	Vector2 v1(30, 40);
 	Vector2 v2(0.6, 0.8);
+	Vector2 v3(0,0);
+	EXPECT_TRUE(v3 == v3.getNormal());
 	EXPECT_TRUE(v2 == v1.getNormal());
 
 }
@@ -49,6 +51,9 @@ TEST(vector2, normalize){
 	v1 = Vector2();
 	v2 = v1.getNormal();
 	EXPECT_TRUE(v2 == v1);
+	Vector2 v3;
+	v2 = v3.Normalize();
+	EXPECT_TRUE(v3 == v2);
 }
 
 TEST(vector2, magnitude){

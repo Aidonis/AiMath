@@ -43,16 +43,21 @@ namespace AiMath
 
 	Vector3 Vector3::getNormal(){
 		Vector3 temp = (*this);
-		float magnitude = Magnitude();
-		temp /= magnitude;
+		float mag = Magnitude();
 
+		if (mag){
+			temp /= mag;
+		}
 		return temp;
 	}
-	void  Vector3::Normalize(){
+	Vector3& Vector3::Normalize(){
 		float mag = Magnitude();
-		x /= mag;
-		y /= mag;
-		z /= mag;
+		if (mag){
+			x /= mag;
+			y /= mag;
+			z /= mag;
+		}
+		return (*this);
 	}
 
 	float  Vector3::Magnitude(){
@@ -63,20 +68,11 @@ namespace AiMath
 		return sqrt(first + second + third);
 	}
 
-	Vector3 Vector3::Lerp(const Vector3& a_endVector, const float& a_point){
-		Vector3 LerpVector;
-		LerpVector.x = a_point;
+	Vector3 Vector3::Lerp(const Vector3& a_endVector, const float& a_percent){
+		Vector3 start = *this;
+		Vector3 end = a_endVector;
 
-		float InterpY = ((a_point - x) * (a_endVector.y - y)) / (a_endVector.x - x);
-		float InterpZ = ((a_point - x) * (a_endVector.z - z)) / (a_endVector.x - x);
-
-		InterpY += y;
-		InterpZ += z;
-
-		LerpVector.y = InterpY;
-		LerpVector.z = InterpZ;
-
-		return LerpVector;
+		return (start + (end - start) * a_percent);
 	}
 
 	//Operators

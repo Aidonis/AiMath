@@ -30,6 +30,9 @@
     <ClInclude Include="include\Test_Matrix3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Test_Vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
