@@ -25,7 +25,7 @@ namespace AiMath{
 		~Vector2();
 
 		Vector2(float a_x, float a_y);
-
+		Vector2(const Vector2& other);
 		float x, y;
 
 		//Euler angle between two Vector2
@@ -65,7 +65,7 @@ namespace AiMath{
 		Vector2& operator/= (const float& a_Scalar);
 
 		Vector2& operator= (const Vector2& a_Source);
-		bool operator== (const Vector2& a_Source);
+		friend bool operator== (const Vector2& a_Lhs, const Vector2& a_Rhs);
 
 	};
 

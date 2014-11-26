@@ -13,6 +13,12 @@ namespace AiMath
 		y = a_y;
 	}
 
+	Vector2::Vector2(const Vector2& other)
+	{
+		x = other.x;
+		y = other.y;
+	}
+
 	Vector2::~Vector2(){
 
 	}
@@ -180,8 +186,8 @@ namespace AiMath
 		return (*this);
 	}
 
-	bool Vector2::operator== (const Vector2& a_Source){
-		if (x == a_Source.x && y == a_Source.y){
+	bool operator== (const Vector2& a_Lhs, const Vector2& a_Rhs){
+		if (a_Lhs.x == a_Rhs.x && a_Lhs.y == a_Rhs.y){
 			return true;
 		}
 		else{
