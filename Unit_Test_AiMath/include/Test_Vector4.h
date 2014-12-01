@@ -56,4 +56,5 @@ TEST(vector4, constructorCopy)
 	EXPECT_TRUE(v == v2);
 }
 
+
 #endif

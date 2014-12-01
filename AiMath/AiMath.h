@@ -141,6 +141,14 @@ namespace AiMath{
 
 		//static Vector4 ConstructFromHex
 
+		//
+		float Magnitude();
+
+		Vector4 getNormal();
+		Vector4& Normalize();
+
+		float DotProduct(const Vector4& other);
+
 		//Operators
 		Vector4 operator+ (const Vector4& a_addVector);
 		Vector4& operator+= (const Vector4& a_addVector);

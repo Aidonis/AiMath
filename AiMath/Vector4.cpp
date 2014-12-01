@@ -42,7 +42,73 @@ namespace AiMath{
 		w = other.w;
 	}
 
+	float Vector4::Magnitude(){
+		return sqrt((x*x) + (y * y) + (z * z) + (w * w));
+	}
+
+	Vector4 Vector4::getNormal(){
+		Vector4 v = *this;
+		v.Normalize();
+		return v;
+	}
+
+	Vector4& Vector4::Normalize(){
+		Vector4 temp = (*this);
+		float mag = Magnitude();
+
+		if (mag){
+			temp *= (1 / mag);
+		}
+		return temp;
+	}
+
+	float Vector4::DotProduct(const Vector4& other){
+		return (x * other.x) + (y * other.y) + (z * other.z) + (w * other.w);
+	}
+
 	//Operators
+	Vector4 Vector4::operator+(const Vector4& a_rhs){
+		Vector4 v = (*this);
+		v += a_rhs;
+		return v;
+	}
+
+	Vector4& Vector4::operator+=(const Vector4& a_rhs){
+		x += a_rhs.x;
+		y += a_rhs.y;
+		z += a_rhs.z;
+		w += a_rhs.w;
+		return (*this);
+	}
+
+	Vector4 Vector4::operator-(const Vector4& a_rhs){
+		Vector4 v = (*this);
+		v -= a_rhs;
+		return v;
+	}
+
+	Vector4 Vector4::operator*(const float& a_rhs){
+		Vector4 v = (*this);
+		v *= a_rhs;
+		return v;
+	}
+	
+	Vector4& Vector4::operator*=(const float& a_rhs){
+		x *= a_rhs;
+		y *= a_rhs;
+		z *= a_rhs;
+		w *= a_rhs;
+		return (*this);
+	}
+
+	Vector4& Vector4::operator-=(const Vector4& a_rhs){
+		x -= a_rhs.x;
+		y -= a_rhs.y;
+		z -= a_rhs.z;
+		w -= a_rhs.w;
+		return(*this);
+	}
+
 	Vector4& Vector4::operator= (const Vector4& rhs){
 		x = rhs.x;
 		y = rhs.y;
@@ -68,6 +134,11 @@ namespace AiMath{
 		return false;
 	}
 
+	bool Vector4::operator!=(const Vector4& rhs)
+	{
+		return !(*this == rhs);
+	}
+
 	bool operator==(const Vector4& lhs, const Vector4& rhs)
 	{
 		if (&lhs == &rhs)
@@ -75,5 +146,14 @@ namespace AiMath{
 		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z && lhs.w == rhs.w)
 			return true;
 		return false;
+	}
+
+	bool operator!=(const Vector4& lhs, const Vector4& rhs)
+	{
+		if (&lhs == &rhs)
+			return false;
+		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z && lhs.w == rhs.w)
+			return false;
+		return true;
 	}
 }
