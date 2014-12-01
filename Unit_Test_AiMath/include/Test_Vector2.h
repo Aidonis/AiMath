@@ -17,15 +17,13 @@ TEST(vector2, equality){
 	EXPECT_FALSE(v1 == v2);
 }
 
-TEST(vector2, constructorDefault)
-{
+TEST(vector2, constructorDefault){
 	Vector2 v;
 	EXPECT_FLOAT_EQ(0, v.x);
 	EXPECT_FLOAT_EQ(0, v.y);
 }
 
-TEST(vector2, copyConstructor)
-{
+TEST(vector2, copyConstructor){
 	Vector2 v(1, 2);
 	Vector2 v2(v);
 	EXPECT_EQ(v, v2);
@@ -129,7 +127,6 @@ TEST(vector2, additionAssignmentOperator){
 }
 
 TEST(vector2, subtractOperator){
-
 	Vector2 v1(10, 10);
 	Vector2 v2(5, 5);
 	Vector2 v3 = v1 - v2;

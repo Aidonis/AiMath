@@ -172,18 +172,21 @@ namespace AiMath{
 		//Operators
 		Matrix3	operator+ (const Matrix3& a_AddMatrix);
 		Matrix3	operator+ (const float& a_AddScalar);
-		Matrix3	operator+= (const Matrix3& a_AddMatrix);
-		Matrix3	operator+= (const float& a_AddScalar);
+		Matrix3& operator+= (const Matrix3& a_AddMatrix);
+		Matrix3& operator+= (const float& a_AddScalar);
 
 		Matrix3	operator- (const Matrix3& a_SubMatrix);
 		Matrix3	operator- (const float& a_SubScalar);
-		Matrix3	operator-= (const Matrix3& a_SubMatrix);
-		Matrix3	operator-= (const float& a_SubScalar);
+		Matrix3& operator-= (const Matrix3& a_SubMatrix);
+		Matrix3& operator-= (const float& a_SubScalar);
 
 		Matrix3	operator* (const Matrix3& a_FactorMatrix);
 		Matrix3	operator* (const float& a_FactorScalar);
-		Matrix3	operator*= (const Matrix3& a_FactorMatrix);
-		Matrix3	operator*= (const float& a_FactorScalar);
+		Matrix3& operator*= (const Matrix3& a_FactorMatrix);
+		Matrix3& operator*= (const float& a_FactorScalar);
+
+		friend Vector2 operator*(const Matrix3& lhs, const Vector2& rhs);
+		friend Vector3 operator*(const Matrix3& lhs, const Vector3& rhs);
 
 		Matrix3& operator= (const Matrix3& a_Source);
 		friend bool operator== (const Matrix3& a_Lhs, const Matrix3& a_Rhs);

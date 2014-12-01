@@ -146,14 +146,13 @@ namespace AiMath{
 
 	//Matrix3 Operators
 
-	Matrix3 Matrix3::operator+ (const Matrix3& rhs)
-	{
+	Matrix3 Matrix3::operator+ (const Matrix3& rhs){
 		Matrix3 result = (*this);
 		result += rhs;
 		return result;
 	}
 
-	Matrix3 Matrix3::operator+= (const Matrix3& rhs){
+	Matrix3& Matrix3::operator+= (const Matrix3& rhs){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
 				matrix[row][col] += rhs.matrix[row][col];
@@ -168,7 +167,7 @@ namespace AiMath{
 		return result;
 	}
 
-	Matrix3 Matrix3::operator+= (const float& rhs){
+	Matrix3& Matrix3::operator+= (const float& rhs){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
 				matrix[row][col] += rhs;
@@ -189,7 +188,7 @@ namespace AiMath{
 		return result;
 	}
 
-	Matrix3 Matrix3::operator-= (const Matrix3& rhs){
+	Matrix3& Matrix3::operator-= (const Matrix3& rhs){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
 				matrix[row][col] -= rhs.matrix[row][col];
@@ -198,7 +197,7 @@ namespace AiMath{
 		return (*this);
 	}
 
-	Matrix3 Matrix3::operator-= (const float& rhs){
+	Matrix3& Matrix3::operator-= (const float& rhs){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
 				matrix[row][col] -= rhs;
@@ -207,8 +206,52 @@ namespace AiMath{
 		return (*this);
 	}
 
-	Matrix3& Matrix3::operator= (const Matrix3& rhs)
+	Matrix3 Matrix3::operator*(const Matrix3& rhs)
 	{
+		Matrix3 result = *this;
+		result *= rhs;
+		return result;
+	}
+
+	Matrix3& Matrix3::operator*=(const Matrix3& rhs)
+	{
+		//need to use a temp because use the object during the process and can't modify during.
+		Matrix3 result;
+		for (int row = 0; row < 3; row++)
+		{
+			for (int col = 0; col < 3; col++)
+			{
+				Vector3 rowVector = Matrix3::GetVector3(ROW, row, *this);
+				Vector3 colVector = Matrix3::GetVector3(COL, col, rhs);
+				result.matrix[row][col] = rowVector.DotProduct(colVector);
+			}
+		}
+		return *this = result;
+	}
+
+	Vector3 operator*(const Matrix3& lhs, const Vector3& rhs){
+		Vector3 result;
+		Vector3 row = Matrix3::GetVector3(ROW, 0, lhs);
+		result.x = row.DotProduct(rhs);
+		row = Matrix3::GetVector3(ROW, 1, lhs);
+		result.y = row.DotProduct(rhs);
+		row = Matrix3::GetVector3(ROW, 2, lhs);
+		result.z = row.DotProduct(rhs);
+		return result;
+	}
+
+	Vector2 operator*(const Matrix3& lhs, const Vector2& rhs){
+		Vector2 result;
+		//Convert to Vector3
+		Vector3 v(rhs.x, rhs.y, 1);
+		Vector3 row = Matrix3::GetVector3(ROW, 0, lhs);
+		result.x = row.DotProduct(v);
+		row = Matrix3::GetVector3(ROW, 1, lhs);
+		result.y = row.DotProduct(v);
+		return result;
+	}
+
+	Matrix3& Matrix3::operator= (const Matrix3& rhs){
 		for (int row = 0; row < 3; row++)
 		{
 			for (int col = 0; col < 3; col++)
@@ -220,9 +263,8 @@ namespace AiMath{
 	}
 
 	
-	//Returns true if every element is equal to the element in the same position in the given matrix, else return false.
-	bool operator== (const Matrix3& lhs, const Matrix3& rhs)
-	{
+	//Returns true if every element is equal to the element in the same position in the given matrix
+	bool operator== (const Matrix3& lhs, const Matrix3& rhs){
 		if (&lhs == &rhs)
 			return true;
 
@@ -237,8 +279,7 @@ namespace AiMath{
 		return true;
 	}
 
-	bool operator==(const Vector3& lhs, const Vector3& rhs)
-	{
+	bool operator==(const Vector3& lhs, const Vector3& rhs){
 		if (&lhs == &rhs)
 			return true;
 		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
@@ -246,13 +287,11 @@ namespace AiMath{
 		return false;
 	}
 
-	bool operator!= (const Matrix3& lhs, const Matrix3& rhs)
-	{
+	bool operator!= (const Matrix3& lhs, const Matrix3& rhs){
 		return !(lhs == rhs);
 	}
 
-	float* Matrix3::operator[](int rhs)
-	{
+	float* Matrix3::operator[](int rhs){
 		return matrix[rhs];
 	}
 }
