@@ -121,58 +121,6 @@ namespace AiMath{
 
 	};
 
-	class Vector3{
-	public:
-		Vector3();
-		~Vector3();
-
-		Vector3(float a_x, float a_y, float a_z);
-
-		float x, y, z;
-
-		//Euler angle between two Vector3
-		float EulerAngle(const Vector3& a_Vector);
-
-		//Dot Product between two Vector3
-		float DotProduct(const Vector3& a_Vector);
-
-		Vector3 CrossProduct(const Vector3 &a_Term);
-
-		//Normalized Vector3
-		Vector3 getNormal();
-		Vector3& Normalize();
-
-		//Magnitude of Vector3
-		float Magnitude();
-
-		//Linear Interpolation
-		Vector3 Lerp(const Vector3& a_endVector, const float& a_percent);
-
-		//Operators
-
-		Vector3 operator+ (const Vector3& a_addVector);
-		Vector3 operator+ (const float& a_addScalar);
-
-		Vector3& operator+= (const Vector3& a_addVector);
-		Vector3& operator+= (const float& a_addScalar);
-
-		Vector3 operator- (const Vector3& a_subVector);
-		Vector3 operator- (const float& a_subScalar);
-
-		Vector3& operator-= (const Vector3& a_subVector);
-		Vector3& operator-= (const float& a_subScalar); 
-
-		Vector3 operator* (const float& a_Scalar);
-		Vector3& operator*= (const float& a_Scalar);
-
-		Vector3 operator/ (const float& a_Scalar);
-		Vector3& operator/= (const float& a_Scalar);
-
-		Vector3& operator= (const Vector3& a_Source);
-		bool operator== (const Vector3& a_Source);
-
-	};
-
 	class Vector4{
 	public:
 		Vector4();
@@ -183,7 +131,7 @@ namespace AiMath{
 		float x, y, z, w;
 
 		//Construct and return a Vector4 from hex value
-		//Input 0x000000 to 0xFFFFFF
+		//Input 0x00000000 to 0xFFFFFFFF
 		//Output 0 to 255
 		// x = red, y = green, z = blue, w = alpha
 		Vector4(const unsigned int a_hex);
@@ -195,16 +143,10 @@ namespace AiMath{
 
 		//Operators
 		Vector4 operator+ (const Vector4& a_addVector);
-		Vector4 operator+ (const float& a_addScalar);
-
 		Vector4& operator+= (const Vector4& a_addVector);
-		Vector4& operator+= (const float& a_addScalar);
 
 		Vector4 operator- (const Vector4& a_subVector);
-		Vector4 operator- (const float& a_subScalar);
-
 		Vector4& operator-= (const Vector4& a_subVector);
-		Vector4& operator-= (const float& a_subScalar);
 
 		Vector4 operator* (const float& a_Scalar);
 		Vector4& operator*= (const float& a_Scalar);

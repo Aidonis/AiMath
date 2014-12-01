@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="include\Test_Matrix3.h" />
     <ClInclude Include="include\Test_Vector3.h" />
+    <ClInclude Include="include\Test_Vector4.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="include\Test_Vector2.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="..\AiMath\Matrix3.cpp" />
     <ClCompile Include="..\AiMath\Vector2.cpp" />
     <ClCompile Include="..\AiMath\Vector3.cpp" />
+    <ClCompile Include="..\AiMath\Vector4.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
