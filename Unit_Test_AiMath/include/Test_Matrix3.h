@@ -177,4 +177,15 @@ TEST(matrix3, transform)
 		0, 0, 1));
 
 }
+
+TEST(matrix3, orthographicProjection)
+{
+	Matrix3 expect(
+		1, 0, 0,
+		0, 1, 0,
+		0, 0, 0);
+	Matrix3 result = Matrix3::OrthographicProjection();
+	EXPECT_EQ(expect, result);
+
+}
 #endif

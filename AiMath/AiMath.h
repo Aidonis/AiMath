@@ -144,19 +144,30 @@ namespace AiMath{
 		~Matrix3();
 
 		static Vector3 GetVector3(MATRIX_MAJOR type, int index, const Matrix3& matrix);
-
+		
+		//Returns this matrix transposed
 		Matrix3& Transpose();
+
+		//Returns a new matrix the transpose of this matrix
 		Matrix3 GetTranspose();
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
 
 		static Matrix3 Identity();
 
-		Vector3 Scale(const Vector3 &a_Vector);
+		//Returns 3x3 orthographic projection matrix
+		static Matrix3 OrthographicProjection();
 
-		static Matrix3 MakeXRotationMatrix(float a_Radians);
-		static Matrix3 MakeYRotationMatrix(float a_Radians);
-		static Matrix3 MakeZRotationMatrix(float a_Radians);
+		//Returns new rotation matrix.
+		// Radians > 0 = counterclockwise rotation
+		// Radians < 0 = clockwise rotation
+		static Matrix3 SetupRotation(float a_Radians);
+
+		//Returns new translation matrix
+		static Matrix3 SetupTranslation(Vector2& a_Translation);
+
+		//Returns new scaled matrix
+		static Matrix3 SetupScale(Vector2& a_Scale);
 
 		//Operators
 		Matrix3	operator+ (const Matrix3& a_AddMatrix);
@@ -233,9 +244,11 @@ namespace AiMath{
 		Matrix4	operator*= (const Matrix4& a_FactorMatrix);
 		Matrix4	operator*= (const float& a_FactorScalar);
 
-		Matrix4 operator= (const Matrix4& a_Source);
+		Matrix4& operator= (const Matrix4& a_Source);
 		const bool operator== (const Matrix4& a_Term);
 		const bool operator!= (const Matrix4& a_Term);
+
+		float* operator[](int rhs);
 	};
 }
 #endif

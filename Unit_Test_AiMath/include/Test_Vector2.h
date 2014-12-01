@@ -119,10 +119,10 @@ TEST(vector2, additionAssignmentOperator){
 	Vector2 v2(10, 10);
 	v1 += v2;
 
-	EXPECT_TRUE(v1 == Vector2(15, 15)) << "verify addition applied";
-	EXPECT_TRUE(v2 == Vector2(10, 10)) << "verify unchanged";
+	EXPECT_TRUE(v1 == Vector2(15, 15));
+	EXPECT_TRUE(v2 == Vector2(10, 10));
 
-	//verify chaining is doable for crazier people
+	//verify chaining
 	(v2 += Vector2(1, 1)) += Vector2(4, 4);
 
 	EXPECT_TRUE(v2 == Vector2(15, 15));

@@ -63,9 +63,6 @@ namespace AiMath{
 	}
 
 	//Transpose the matrix
-
-	//getVector3 needed
-
 	Matrix3& Matrix3::Transpose(){
 		Matrix3 result;
 		for (int row = 0; row < 3; row++){
@@ -113,9 +110,71 @@ namespace AiMath{
 		return temp;
 	}
 
+	//Returns 3x3 orthographic projection
+	Matrix3 Matrix3::OrthographicProjection(){
+		Matrix3 r = Matrix3::Identity();
+		r.matrix[2][2] = 0;
+		return r;
+	}
+
+	//Returns new rotation matrix
+	Matrix3 Matrix3::SetupRotation(float a_Radians){
+		Matrix3 m = Matrix3::Identity();
+		m.matrix[0][0] = cos(a_Radians);
+		m.matrix[0][1] = sin(a_Radians);
+
+		m.matrix[1][0] = sin(a_Radians);
+		m.matrix[1][1] = cos(a_Radians);
+		return m;
+	}
+
+	//Returns new translation matrix
+	Matrix3 Matrix3::SetupTranslation(Vector2& a_Translation){
+		Matrix3 m = Matrix3::Identity();
+		m.matrix[0][2] = a_Translation.x;
+		m.matrix[1][2] = a_Translation.y;
+		return m;
+	}
+
+	//Returns new scale matrix
+	Matrix3 Matrix3::SetupScale(Vector2& a_Scale){
+		Matrix3 m = Matrix3::Identity();
+		m.matrix[0][0] = a_Scale.x;
+		m.matrix[1][1] = a_Scale.y;
+		return m;
+	}
+
 	//Matrix3 Operators
 
-	//
+	Matrix3 Matrix3::operator+ (const Matrix3& rhs)
+	{
+		Matrix3 result = (*this);
+		result += rhs;
+		return result;
+	}
+
+	Matrix3 Matrix3::operator+= (const Matrix3& rhs){
+		for (int row = 0; row < 3; row++){
+			for (int col = 0; col < 3; col++){
+				matrix[row][col] += rhs.matrix[row][col];
+			}
+		}
+	}
+
+	Matrix3 Matrix3::operator+ (const float& rhs){
+		Matrix3 result = (*this);
+		result += rhs;
+		return result;
+	}
+
+	Matrix3 Matrix3::operator+= (const float& rhs){
+		for (int row = 0; row < 3; row++){
+			for (int col = 0; col < 3; col++){
+				matrix[row][col] += rhs;
+			}
+		}
+	}
+
 	Matrix3& Matrix3::operator= (const Matrix3& rhs)
 	{
 		for (int row = 0; row < 3; row++)
@@ -128,9 +187,8 @@ namespace AiMath{
 		return *this;
 	}
 
-	/*
-	Returns true if every element is equal to the element in the same position in the given matrix, else return false.
-	*/
+	
+	//Returns true if every element is equal to the element in the same position in the given matrix, else return false.
 	bool operator== (const Matrix3& lhs, const Matrix3& rhs)
 	{
 		if (&lhs == &rhs)
