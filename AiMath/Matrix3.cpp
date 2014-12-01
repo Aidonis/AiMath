@@ -121,7 +121,7 @@ namespace AiMath{
 	Matrix3 Matrix3::SetupRotation(float a_Radians){
 		Matrix3 m = Matrix3::Identity();
 		m.matrix[0][0] = cos(a_Radians);
-		m.matrix[0][1] = sin(a_Radians);
+		m.matrix[0][1] = -sin(a_Radians);
 
 		m.matrix[1][0] = sin(a_Radians);
 		m.matrix[1][1] = cos(a_Radians);
@@ -293,5 +293,15 @@ namespace AiMath{
 
 	float* Matrix3::operator[](int rhs){
 		return matrix[rhs];
+	}
+
+	std::ostream& operator<<(std::ostream& out, const Matrix3& m)
+	{
+		out << "Matrix3\n******************\n";
+		out << "** " << m.matrix[0][0] << "\t" << m.matrix[0][1] << "\t" << m.matrix[0][2] << "  **\n";
+		out << "** " << m.matrix[1][0] << "\t" << m.matrix[1][1] << "\t" << m.matrix[1][2] << "  **\n";
+		out << "** " << m.matrix[2][0] << "\t" << m.matrix[2][1] << "\t" << m.matrix[2][2] << "  **\n";
+		out << "******************\n";
+		return out;
 	}
 }

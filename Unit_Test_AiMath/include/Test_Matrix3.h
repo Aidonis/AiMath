@@ -190,6 +190,7 @@ TEST(matrix3, orthographicProjection){
 
 
 //Operators
+//
 TEST(matrix3, additionOperator){
 	Matrix3 m1(
 		1, 2, 3,
