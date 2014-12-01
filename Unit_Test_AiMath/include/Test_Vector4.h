@@ -56,5 +56,27 @@ TEST(vector4, constructorCopy)
 	EXPECT_TRUE(v == v2);
 }
 
+TEST(vector4, normalize)
+{
+	Vector4 v1(1, 2, 2, 4);
+	Vector4 v2 = v1.getNormal();
+	v1.Normalize();
+	EXPECT_TRUE(v2 == v1);
+	v1 = Vector4();
+	v2 = v1.getNormal();
+	EXPECT_TRUE(v2 == v1);
+	Vector4 v3(0, 0, 0, 0);
+	//v2 = v3.Normalize();
+	//EXPECT_TRUE(v3 == v2);
+}
+
+TEST(vector4, dotProduct)
+{
+	Vector4 v1(5, 2, 15, -10);
+	Vector4 v2(-10, 4, -100, 12);
+	EXPECT_FLOAT_EQ(-1662, v1.DotProduct(v2));
+	EXPECT_TRUE(v1 == Vector4(5, 2, 15, -10));
+	EXPECT_TRUE(v2 == Vector4(-10, 4, -100, 12));
+}
 
 #endif

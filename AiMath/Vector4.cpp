@@ -109,41 +109,41 @@ namespace AiMath{
 		return(*this);
 	}
 
-	Vector4& Vector4::operator= (const Vector4& rhs){
-		x = rhs.x;
-		y = rhs.y;
-		z = rhs.z;
-		w = rhs.w;
+	Vector4& Vector4::operator= (const Vector4& a_rhs){
+		x = a_rhs.x;
+		y = a_rhs.y;
+		z = a_rhs.z;
+		w = a_rhs.w;
 		return (*this);
 	}
 
-	bool Vector4::operator==(const Vector4& rhs)
+	bool Vector4::operator==(const Vector4& a_rhs)
 	{
-		if (this == &rhs)
+		if (this == &a_rhs)
 		{
 			//same object
 			return true;
 		}
-		if (x == rhs.x &&
-			y == rhs.y &&
-			z == rhs.z &&
-			w == rhs.w)
+		if (x == a_rhs.x &&
+			y == a_rhs.y &&
+			z == a_rhs.z &&
+			w == a_rhs.w)
 		{
 			return true;
 		}
 		return false;
 	}
 
-	bool Vector4::operator!=(const Vector4& rhs)
+	bool Vector4::operator!=(const Vector4& a_rhs)
 	{
-		return !(*this == rhs);
+		return !(*this == a_rhs);
 	}
 
-	bool operator==(const Vector4& lhs, const Vector4& rhs)
+	bool operator==(const Vector4& a_lhs, const Vector4& a_rhs)
 	{
-		if (&lhs == &rhs)
+		if (&a_lhs == &a_rhs)
 			return true;
-		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z && lhs.w == rhs.w)
+		if (a_lhs.x == a_rhs.x && a_lhs.y == a_rhs.y && a_lhs.z == a_rhs.z && a_lhs.w == a_rhs.w)
 			return true;
 		return false;
 	}
