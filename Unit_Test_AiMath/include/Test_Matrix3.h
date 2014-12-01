@@ -188,4 +188,98 @@ TEST(matrix3, orthographicProjection)
 	EXPECT_EQ(expect, result);
 
 }
+
+
+
+//Operators
+TEST(matrix3, additionOperator)
+{
+	Matrix3 m1(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+	Matrix3 m2(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1);
+
+	Matrix3 result = m2 + m1;
+
+	Matrix3 expect(
+		10, 10, 10,
+		10, 10, 10,
+		10, 10, 10);
+
+	EXPECT_TRUE(expect == result);
+	EXPECT_TRUE(m1 == Matrix3(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9));
+	EXPECT_TRUE(m2 == Matrix3(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1));
+
+	//verify chaining 
+	result = m1 + m2 + result;
+	expect = Matrix3(
+		20, 20, 20,
+		20, 20, 20,
+		20, 20, 20);
+
+	EXPECT_TRUE(expect == result);
+	EXPECT_TRUE(m1 == Matrix3(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9));
+	EXPECT_TRUE(m2 == Matrix3(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1));
+}
+
+TEST(matrix3, subtractOperator)
+{
+	Matrix3 m1(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
+	Matrix3 m2(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1);
+
+	Matrix3 result = m2 - m1;
+
+	Matrix3 expect(
+		8, 6, 4,
+		2, 0, -2,
+		-4, -6, -8);
+	EXPECT_TRUE(expect == result);
+	EXPECT_TRUE(m1 == Matrix3(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9));
+	EXPECT_TRUE(m2 == Matrix3(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1));
+
+	//verify chaining 
+	result = m2 - m1 - m1;
+	expect = Matrix3(
+		7, 4, 1,
+		-2, -5, -8,
+		-11, -14, -17);
+
+	EXPECT_TRUE(expect == result);
+	EXPECT_TRUE(m1 == Matrix3(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9));
+	EXPECT_TRUE(m2 == Matrix3(
+		9, 8, 7,
+		6, 5, 4,
+		3, 2, 1));
+}
 #endif

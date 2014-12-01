@@ -159,6 +159,7 @@ namespace AiMath{
 				matrix[row][col] += rhs.matrix[row][col];
 			}
 		}
+		return (*this);
 	}
 
 	Matrix3 Matrix3::operator+ (const float& rhs){
@@ -173,6 +174,37 @@ namespace AiMath{
 				matrix[row][col] += rhs;
 			}
 		}
+		return (*this);
+	}
+
+	Matrix3 Matrix3::operator- (const Matrix3& rhs){
+		Matrix3 result = (*this);
+		result -= rhs;
+		return result;
+	}
+
+	Matrix3 Matrix3::operator- (const float& rhs){
+		Matrix3 result = (*this);
+		result -= rhs;
+		return result;
+	}
+
+	Matrix3 Matrix3::operator-= (const Matrix3& rhs){
+		for (int row = 0; row < 3; row++){
+			for (int col = 0; col < 3; col++){
+				matrix[row][col] -= rhs.matrix[row][col];
+			}
+		}
+		return (*this);
+	}
+
+	Matrix3 Matrix3::operator-= (const float& rhs){
+		for (int row = 0; row < 3; row++){
+			for (int col = 0; col < 3; col++){
+				matrix[row][col] -= rhs;
+			}
+		}
+		return (*this);
 	}
 
 	Matrix3& Matrix3::operator= (const Matrix3& rhs)
