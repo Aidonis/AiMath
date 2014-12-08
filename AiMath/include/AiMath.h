@@ -117,7 +117,6 @@ namespace AiMath{
 		Vector3& operator/= (const float& a_Scalar);
 
 		Vector3& operator= (const Vector3& a_Source);
-		bool operator== (const Vector3& a_Source);
 		friend bool operator==(const Vector3& lhs, const Vector3& rhs);
 
 	};

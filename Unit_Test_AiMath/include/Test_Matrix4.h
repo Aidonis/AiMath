@@ -52,4 +52,30 @@ TEST(matrix4, copyConstructor)
 	EXPECT_FALSE(&m2 == &m) << "expect: " << &m2 << "result: " << &m;
 }
 
+TEST(matrix4, equality)
+{
+	Matrix4 m1(
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 5);
+
+	Matrix4 m2(
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 5);
+
+	Matrix4 m3(
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 5,
+		2, 3, 4, 0);
+
+	EXPECT_TRUE(m1 == m2);
+	EXPECT_TRUE(m1 == m1);
+	EXPECT_FALSE(m1 == m3);
+
+}
+
 #endif

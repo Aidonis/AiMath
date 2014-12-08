@@ -80,7 +80,7 @@ namespace AiMath{
 	//Transpose the matrix
 	Matrix4& Matrix4::Transpose(){
 		Matrix4 result;
-		for (int row = 0; row < 3; row++){
+		for (int row = 0; row < 4; row++){
 			//get the row'th column from this object
 			Vector4 v = Matrix4::GetVector4(COL, row, *this);
 			//set the temp matrix's row'th row to the vector's values
@@ -216,8 +216,8 @@ namespace AiMath{
 	}
 
 	Matrix4& Matrix4::operator-= (const Matrix4& a_Rhs){
-		for (int row = 0; row < 3; row++){
-			for (int col = 0; col < 3; col++){
+		for (int row = 0; row < 4; row++){
+			for (int col = 0; col < 4; col++){
 				matrix[row][col] -= a_Rhs.matrix[row][col];
 			}
 		}
@@ -236,9 +236,9 @@ namespace AiMath{
 	{
 		//need to use a temp because use the object during the process and can't modify during.
 		Matrix4 result;
-		for (int row = 0; row < 3; row++)
+		for (int row = 0; row < 4; row++)
 		{
-			for (int col = 0; col < 3; col++)
+			for (int col = 0; col < 4; col++)
 			{
 				Vector4 rowVector = Matrix4::GetVector4(ROW, row, *this);
 				Vector4 colVector = Matrix4::GetVector4(COL, col, a_Rhs);
@@ -260,9 +260,9 @@ namespace AiMath{
 	}
 
 	Matrix4& Matrix4::operator= (const Matrix4& a_Rhs){
-		for (int row = 0; row < 3; row++)
+		for (int row = 0; row < 4; row++)
 		{
-			for (int col = 0; col < 3; col++)
+			for (int col = 0; col < 4; col++)
 			{
 				matrix[row][col] = a_Rhs.matrix[row][col];
 			}
@@ -276,9 +276,9 @@ namespace AiMath{
 		if (&a_Lhs == &a_Rhs)
 			return true;
 
-		for (int row = 0; row < 3; row++)
+		for (int row = 0; row < 4; row++)
 		{
-			for (int col = 0; col < 3; col++)
+			for (int col = 0; col < 4; col++)
 			{
 				if (a_Lhs.matrix[row][col] != a_Rhs.matrix[row][col])
 					return false;
