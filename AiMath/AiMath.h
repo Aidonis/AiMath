@@ -253,12 +253,19 @@ namespace AiMath{
 		Matrix4(const float& a_00,
 			const float& a_01,
 			const float& a_02,
+			const float& a_03,
 			const float& a_10,
 			const float& a_11,
 			const float& a_12,
+			const float& a_13,
 			const float& a_20,
 			const float& a_21,
-			const float& a_22);
+			const float& a_22,
+			const float& a_23,
+			const float& a_30,
+			const float& a_31,
+			const float& a_32,
+			const float& a_33);
 
 
 		Matrix4(const Matrix4 &a_Source);
@@ -267,33 +274,32 @@ namespace AiMath{
 
 		~Matrix4();
 
-		void Transpose();
+		Vector4 GetVector4(MATRIX_MAJOR type, int index, const Matrix4& matrix);
+
+		Matrix4& Transpose();
+		Matrix4 GetTranspose();
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
 
 		static Matrix4 Identity();
+		
+		static Matrix4 SetupRotation(AXIS a_Axis, float a_Radians);
 
-		Vector3 Scale(const Vector3 &a_Vector);
+		static Matrix4 SetupScale(const Vector3& a_Vector);
 
-		static Matrix4 MakeXRotationMatrix(float a_Radians);
-		static Matrix4 MakeYRotationMatrix(float a_Radians);
-		static Matrix4 MakeZRotationMatrix(float a_Radians);
+		static Matrix4 SetupTranslation(const Vector3& a_Vector);
 
 		//Operators
 		Matrix4	operator+ (const Matrix4& a_AddMatrix);
-		Matrix4	operator+ (const float& a_AddScalar);
-		Matrix4	operator+= (const Matrix4& a_AddMatrix);
-		Matrix4	operator+= (const float& a_AddScalar);
+		Matrix4& operator+= (const Matrix4& a_AddMatrix);
 
 		Matrix4	operator- (const Matrix4& a_SubMatrix);
-		Matrix4	operator- (const float& a_SubScalar);
-		Matrix4	operator-= (const Matrix4& a_SubMatrix);
-		Matrix4	operator-= (const float& a_SubScalar);
+		Matrix4& operator-= (const Matrix4& a_SubMatrix);
 
 		Matrix4	operator* (const Matrix4& a_FactorMatrix);
 		Matrix4	operator* (const float& a_FactorScalar);
-		Matrix4	operator*= (const Matrix4& a_FactorMatrix);
-		Matrix4	operator*= (const float& a_FactorScalar);
+		Matrix4& operator*= (const Matrix4& a_FactorMatrix);
+		Matrix4& operator*= (const float& a_FactorScalar);
 
 		Matrix4& operator= (const Matrix4& a_Source);
 		const bool operator== (const Matrix4& a_Term);
