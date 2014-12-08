@@ -118,6 +118,7 @@ namespace AiMath{
 
 		Vector3& operator= (const Vector3& a_Source);
 		bool operator== (const Vector3& a_Source);
+		friend bool operator==(const Vector3& lhs, const Vector3& rhs);
 
 	};
 
@@ -236,7 +237,7 @@ namespace AiMath{
 
 		Matrix3& operator= (const Matrix3& a_Source);
 		friend bool operator== (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
-		friend bool operator==(const Vector3& lhs, const Vector3& rhs);
+
 		friend bool operator!= (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
 
 		float* operator[](int rhs);
@@ -303,7 +304,7 @@ namespace AiMath{
 		Matrix4& operator*= (const float& a_FactorScalar);
 
 		Matrix4& operator= (const Matrix4& a_Source);
-		const bool operator== (const Matrix4& a_Term);
+		friend bool operator== (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
 		const bool operator!= (const Matrix4& a_Term);
 
 		float* operator[](int rhs);

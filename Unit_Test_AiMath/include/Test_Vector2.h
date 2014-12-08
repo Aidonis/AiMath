@@ -6,7 +6,7 @@ header file defines public API for Google test, needs to be included for any tes
 */
 #include "gtest/gtest.h"
 
-#include "..\..\AiMath\AiMath.h"
+#include "AiMath.h"
 
 using AiMath::Vector2;
 

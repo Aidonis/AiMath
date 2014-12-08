@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(SolutionDir)..\GoogleTest\msvc\gtest-md\Debug;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)..\GoogleTest\;$(SolutionDir)..\GoogleTest\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\GoogleTest\msvc\gtest-md\Debug;$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\GoogleTest\;$(SolutionDir)..\GoogleTest\include\;$(SolutionDir)AiMath\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -60,7 +60,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtestd.lib;AiMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>"$(TargetDir)$(TargetFileName)"</Command>
@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Test_Matrix3.h" />
+    <ClInclude Include="include\Test_Matrix4.h" />
     <ClInclude Include="include\Test_Vector3.h" />
     <ClInclude Include="include\Test_Vector4.h" />
     <ClInclude Include="stdafx.h" />
@@ -96,10 +97,6 @@
     <ClInclude Include="include\Test_Vector2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\AiMath\Matrix3.cpp" />
-    <ClCompile Include="..\AiMath\Vector2.cpp" />
-    <ClCompile Include="..\AiMath\Vector3.cpp" />
-    <ClCompile Include="..\AiMath\Vector4.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

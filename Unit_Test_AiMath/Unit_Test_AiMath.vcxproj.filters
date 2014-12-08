@@ -36,24 +36,15 @@
     <ClInclude Include="include\Test_Vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Test_Matrix4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Unit_Test_AiMath.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AiMath\Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AiMath\Matrix3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AiMath\Vector3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AiMath\Vector4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

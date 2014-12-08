@@ -5,7 +5,7 @@
 #include "gtest/gtest.h"
 
 //Code to test
-#include "..\..\AiMath\AiMath.h"
+#include "AiMath.h"
 
 using AiMath::Vector4;
 

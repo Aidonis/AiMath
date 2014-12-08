@@ -8,6 +8,7 @@
 #include "include/Test_Vector2.h"
 #include "include/Test_Vector3.h"
 #include "include/Test_Matrix3.h"
+#include "include/Test_Matrix4.h"
 #include "include/Test_Vector4.h"
 
 

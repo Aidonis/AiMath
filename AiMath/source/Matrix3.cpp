@@ -279,14 +279,6 @@ namespace AiMath{
 		return true;
 	}
 
-	bool operator==(const Vector3& lhs, const Vector3& rhs){
-		if (&lhs == &rhs)
-			return true;
-		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
-			return true;
-		return false;
-	}
-
 	bool operator!= (const Matrix3& lhs, const Matrix3& rhs){
 		return !(lhs == rhs);
 	}
