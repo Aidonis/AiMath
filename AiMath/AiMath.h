@@ -268,18 +268,19 @@ namespace AiMath{
 			const float& a_33);
 
 
-		Matrix4(const Matrix4 &a_Source);
+		Matrix4(const Matrix4& a_Source);
 
 		float matrix[4][4];
 
 		~Matrix4();
 
-		Vector4 GetVector4(MATRIX_MAJOR type, int index, const Matrix4& matrix);
+		static Vector4 GetVector4(MATRIX_MAJOR type, int index, const Matrix4& matrix);
 
 		Matrix4& Transpose();
 		Matrix4 GetTranspose();
 
 		Vector3 VectorTransform(const Vector3 &a_Point);
+		Matrix4 OrthographicProjection(const float left, const float right, const float top, const float bottom, const float near, const float far);
 
 		static Matrix4 Identity();
 		
@@ -290,14 +291,14 @@ namespace AiMath{
 		static Matrix4 SetupTranslation(const Vector3& a_Vector);
 
 		//Operators
-		Matrix4	operator+ (const Matrix4& a_AddMatrix);
+		friend Matrix4 operator+ (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
 		Matrix4& operator+= (const Matrix4& a_AddMatrix);
 
-		Matrix4	operator- (const Matrix4& a_SubMatrix);
+		friend Matrix4 operator- (const Matrix4& a_SubMatrix);
 		Matrix4& operator-= (const Matrix4& a_SubMatrix);
 
-		Matrix4	operator* (const Matrix4& a_FactorMatrix);
-		Matrix4	operator* (const float& a_FactorScalar);
+		friend Matrix4 operator* (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
+		friend Vector4 operator*(const Matrix4& a_Lhs, const Vector4& a_Rhs);
 		Matrix4& operator*= (const Matrix4& a_FactorMatrix);
 		Matrix4& operator*= (const float& a_FactorScalar);
 

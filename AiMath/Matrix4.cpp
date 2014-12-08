@@ -134,10 +134,15 @@ namespace AiMath{
 		return temp;
 	}
 
-	//Returns 3x3 orthographic projection
-	Matrix4 Matrix4::OrthographicProjection(){
+	//Returns 4x4 orthographic projection
+	Matrix4 Matrix4::OrthographicProjection(const float left, const float right, const float top, const float bottom, const float near, const float far){
 		Matrix4 r = Matrix4::Identity();
-		r.matrix[2][2] = 0;
+		r.matrix[0][0] = 2.0f / (right - left);
+		r.matrix[0][3] = -1.0f * ((right + left) / (right - left));
+		r.matrix[1][1] = 2.0f / (top - bottom);
+		r.matrix[1][3] = -1.0f * ((top + bottom) / (top - bottom));
+		r.matrix[2][2] = -1.0f * (2 / (far - near));
+		r.matrix[2][3] = -1.0f * ((far + near) / (far - near));
 		return r;
 	}
 
@@ -187,74 +192,47 @@ namespace AiMath{
 
 	//Matrix4 Operators
 
-	Matrix4 Matrix4::operator+ (const Matrix4& rhs){
-		Matrix4 result = (*this);
-		result += rhs;
-		return result;
+	Matrix4 operator+ (const Matrix4& a_Lhs, const Matrix4& a_Rhs){
+		Matrix4 m;
+		m = a_Lhs;
+		m += a_Rhs;
+		return m;
 	}
 
-	Matrix4& Matrix4::operator+= (const Matrix4& rhs){
+	Matrix4& Matrix4::operator+= (const Matrix4& a_Rhs){
 		for (int row = 0; row < 4; row++){
 			for (int col = 0; col < 4; col++){
-				matrix[row][col] += rhs.matrix[row][col];
+				matrix[row][col] += a_Rhs.matrix[row][col];
 			}
 		}
 		return (*this);
 	}
 
-	Matrix4 Matrix4::operator+ (const float& rhs){
-		Matrix4 result = (*this);
-		result += rhs;
-		return result;
+	Matrix4 operator- (const Matrix4& a_Lhs, const Matrix4& a_Rhs){
+		Matrix4 m;
+		m = a_Lhs;
+		m -= a_Rhs;
+		return m;
 	}
 
-	Matrix4& Matrix4::operator+= (const float& rhs){
+	Matrix4& Matrix4::operator-= (const Matrix4& a_Rhs){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
-				matrix[row][col] += rhs;
+				matrix[row][col] -= a_Rhs.matrix[row][col];
 			}
 		}
 		return (*this);
 	}
 
-	Matrix4 Matrix4::operator- (const Matrix4& rhs){
-		Matrix4 result = (*this);
-		result -= rhs;
-		return result;
-	}
-
-	Matrix4 Matrix4::operator- (const float& rhs){
-		Matrix4 result = (*this);
-		result -= rhs;
-		return result;
-	}
-
-	Matrix4& Matrix4::operator-= (const Matrix4& rhs){
-		for (int row = 0; row < 3; row++){
-			for (int col = 0; col < 3; col++){
-				matrix[row][col] -= rhs.matrix[row][col];
-			}
-		}
-		return (*this);
-	}
-
-	Matrix4& Matrix4::operator-= (const float& rhs){
-		for (int row = 0; row < 3; row++){
-			for (int col = 0; col < 3; col++){
-				matrix[row][col] -= rhs;
-			}
-		}
-		return (*this);
-	}
-
-	Matrix4 Matrix4::operator*(const Matrix4& rhs)
+	Matrix4 operator*(const Matrix4& a_Lhs, const Matrix4& a_Rhs)
 	{
-		Matrix4 result = *this;
-		result *= rhs;
-		return result;
+		Matrix4 m;
+		m = a_Lhs;
+		m *= a_Rhs;
+		return m;
 	}
 
-	Matrix4& Matrix4::operator*=(const Matrix4& rhs)
+	Matrix4& Matrix4::operator*=(const Matrix4& a_Rhs)
 	{
 		//need to use a temp because use the object during the process and can't modify during.
 		Matrix4 result;
@@ -263,41 +241,30 @@ namespace AiMath{
 			for (int col = 0; col < 3; col++)
 			{
 				Vector4 rowVector = Matrix4::GetVector4(ROW, row, *this);
-				Vector4 colVector = Matrix4::GetVector4(COL, col, rhs);
+				Vector4 colVector = Matrix4::GetVector4(COL, col, a_Rhs);
 				result.matrix[row][col] = rowVector.DotProduct(colVector);
 			}
 		}
 		return *this = result;
 	}
 
-	Vector4 operator*(const Matrix4& lhs, const Vector4& rhs){
+	Vector4 operator*(const Matrix4& a_Lhs, const Vector4& a_Rhs){
 		Vector4 result;
-		Vector4 row = Matrix4::GetVector4(ROW, 0, lhs);
-		result.x = row.DotProduct(rhs);
-		row = Matrix4::GetVector4(ROW, 1, lhs);
-		result.y = row.DotProduct(rhs);
-		row = Matrix4::GetVector4(ROW, 2, lhs);
-		result.z = row.DotProduct(rhs);
+		Vector4 row = Matrix4::GetVector4(ROW, 0, a_Lhs);
+		result.x = row.DotProduct(a_Rhs);
+		row = Matrix4::GetVector4(ROW, 1, a_Lhs);
+		result.y = row.DotProduct(a_Rhs);
+		row = Matrix4::GetVector4(ROW, 2, a_Lhs);
+		result.z = row.DotProduct(a_Rhs);
 		return result;
 	}
 
-	Vector2 operator*(const Matrix4& lhs, const Vector2& rhs){
-		Vector2 result;
-		//Convert to Vector3
-		Vector3 v(rhs.x, rhs.y, 1);
-		Vector3 row = Matrix4::GetVector3(ROW, 0, lhs);
-		result.x = row.DotProduct(v);
-		row = Matrix4::GetVector3(ROW, 1, lhs);
-		result.y = row.DotProduct(v);
-		return result;
-	}
-
-	Matrix4& Matrix4::operator= (const Matrix4& rhs){
+	Matrix4& Matrix4::operator= (const Matrix4& a_Rhs){
 		for (int row = 0; row < 3; row++)
 		{
 			for (int col = 0; col < 3; col++)
 			{
-				matrix[row][col] = rhs.matrix[row][col];
+				matrix[row][col] = a_Rhs.matrix[row][col];
 			}
 		}
 		return *this;
@@ -305,35 +272,35 @@ namespace AiMath{
 
 
 	//Returns true if every element is equal to the element in the same position in the given matrix
-	bool operator== (const Matrix4& lhs, const Matrix4& rhs){
-		if (&lhs == &rhs)
+	bool operator== (const Matrix4& a_Lhs, const Matrix4& a_Rhs){
+		if (&a_Lhs == &a_Rhs)
 			return true;
 
 		for (int row = 0; row < 3; row++)
 		{
 			for (int col = 0; col < 3; col++)
 			{
-				if (lhs.matrix[row][col] != rhs.matrix[row][col])
+				if (a_Lhs.matrix[row][col] != a_Rhs.matrix[row][col])
 					return false;
 			}
 		}
 		return true;
 	}
 
-	bool operator==(const Vector3& lhs, const Vector3& rhs){
-		if (&lhs == &rhs)
+	bool operator==(const Vector3& a_Lhs, const Vector3& a_Rhs){
+		if (&a_Lhs == &a_Rhs)
 			return true;
-		if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
+		if (a_Lhs.x == a_Rhs.x && a_Lhs.y == a_Rhs.y && a_Lhs.z == a_Rhs.z)
 			return true;
 		return false;
 	}
 
-	bool operator!= (const Matrix4& lhs, const Matrix4& rhs){
-		return !(lhs == rhs);
+	bool operator!= (const Matrix4& a_Lhs, const Matrix4& a_Rhs){
+		return !(a_Lhs == a_Rhs);
 	}
 
-	float* Matrix4::operator[](int rhs){
-		return matrix[rhs];
+	float* Matrix4::operator[](int a_Rhs){
+		return matrix[a_Rhs];
 	}
 
 	std::ostream& operator<<(std::ostream& out, const Matrix4& m)
