@@ -297,11 +297,12 @@ namespace AiMath{
 
 	std::ostream& operator<<(std::ostream& out, const Matrix4& m)
 	{
-		out << "Matrix4\n******************\n";
-		out << "** " << m.matrix[0][0] << "\t" << m.matrix[0][1] << "\t" << m.matrix[0][2] << "  **\n";
-		out << "** " << m.matrix[1][0] << "\t" << m.matrix[1][1] << "\t" << m.matrix[1][2] << "  **\n";
-		out << "** " << m.matrix[2][0] << "\t" << m.matrix[2][1] << "\t" << m.matrix[2][2] << "  **\n";
-		out << "******************\n";
+		out << "Matrix4\n*********************\n";
+		out << "** " << m.matrix[0][0] << "\t" << m.matrix[0][1] << "\t" << m.matrix[0][2] << "\t" << m.matrix[0][3] << "  **\n";
+		out << "** " << m.matrix[1][0] << "\t" << m.matrix[1][1] << "\t" << m.matrix[1][2] << "\t" << m.matrix[1][3] << "  **\n";
+		out << "** " << m.matrix[2][0] << "\t" << m.matrix[2][1] << "\t" << m.matrix[2][2] << "\t" << m.matrix[2][3] << "  **\n";
+		out << "** " << m.matrix[3][0] << "\t" << m.matrix[3][1] << "\t" << m.matrix[3][2] << "\t" << m.matrix[3][3] << "  **\n";
+		out << "*********************\n";
 		return out;
 	}
 }

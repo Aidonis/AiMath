@@ -4,6 +4,8 @@
 #include <math.h>
 #include <iostream>
 
+#define PI 3.14159
+
 namespace AiMath{
 	
 	enum MATRIX_MAJOR
@@ -17,6 +19,59 @@ namespace AiMath{
 		X,
 		Y,
 		Z
+	};
+
+
+	//Common Math Functions
+	class AiMath{
+	public:
+		//Degrees to radians
+		static float DegreeToRadians(float a_angleInDegrees){
+			return a_angleInDegrees * (PI / 180);
+		}
+		//Radians to degrees
+		static float RadiansToDegrees(float a_angleInRadians){
+			return a_angleInRadians * (180 / PI);
+		}
+		//Linear Interpolation of percentage between two scalar values
+		//Percent between 0 and 1
+		static float LERP(float a_begin, float a_end, float a_percent){
+			return (a_begin + (a_end - a_begin) * a_percent);
+		}
+
+		//Power of two check
+		static bool IsPowerOfTwo(const unsigned int a_num){
+			unsigned int n = a_num;
+			//shifts bits to the right until it gets a set bit that is most significant or not
+			while (((n & 1) == 0) && n > 1){
+				n >>= 1; //shift right 1 space
+			}
+			return (n == 1);
+		}
+
+		//Get next power of two if not already power of two. Else return given value
+		static unsigned int GetNextPowerOfTwo(const unsigned int a_value){
+			unsigned int v = a_value;
+			//check case of 0
+			if (a_value == 0){
+				return 0;
+			}
+
+			/*copy the most significant bit to all lower bits, then add 1 which results in carry that
+			sets all lower bits to 0 and one bit beyond to 1.  If the original number was a power of 2
+			then the decrement will reduce it by one less, so then round up to original value.
+			*/
+			v--;
+			v |= v >> 1;
+			v |= v >> 2;
+			v |= v >> 4;
+			v |= v >> 8;
+			v |= v >> 16;
+			v++;
+
+			return v;
+		}
+
 	};
 
 	class Vector2{
