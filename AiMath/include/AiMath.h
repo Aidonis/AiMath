@@ -23,10 +23,10 @@ namespace AiMath{
 
 
 	//Common Math Functions
-	class AiMath{
+	class AMath{
 	public:
 		//Degrees to radians
-		static float DegreeToRadians(float a_angleInDegrees){
+		static float DegreesToRadians(float a_angleInDegrees){
 			return a_angleInDegrees * (PI / 180);
 		}
 		//Radians to degrees
@@ -70,6 +70,13 @@ namespace AiMath{
 			v++;
 
 			return v;
+		}
+
+		//returns true if given result is within delta of expected result using
+		//formula: (fabs(result - expected) < delta)
+		static bool FloatEquals(const float& a_result, const float& a_expected, const float a_delta)
+		{
+			return (fabs(a_result - a_expected) < a_delta);
 		}
 
 	};

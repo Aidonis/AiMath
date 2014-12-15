@@ -10,6 +10,7 @@
 #include "include/Test_Matrix3.h"
 #include "include/Test_Matrix4.h"
 #include "include/Test_Vector4.h"
+#include "include/Test_AiMath.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])

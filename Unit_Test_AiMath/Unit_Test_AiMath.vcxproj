@@ -88,6 +88,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Test_AiMath.h" />
     <ClInclude Include="include\Test_Matrix3.h" />
     <ClInclude Include="include\Test_Matrix4.h" />
     <ClInclude Include="include\Test_Vector3.h" />
