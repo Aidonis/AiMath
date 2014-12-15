@@ -1,3 +1,11 @@
+#ifdef AIMATH_DYNAMIC_EXPORTS
+	#define AIMATH_API __declspec(dllexport)
+#elif AIMATH_DYNAMIC_IMPORTS
+	#define AIMATH_API __declspec(dllimport)
+#else
+	#define AIMATH_API
+#endif
+
 #ifndef _AI_Math_H_
 #define _AI_Math_H_
 
@@ -81,7 +89,7 @@ namespace AiMath{
 
 	};
 
-	class Vector2{
+	class AIMATH_API Vector2{
 	public:
 		Vector2();
 		~Vector2();
@@ -127,11 +135,11 @@ namespace AiMath{
 		Vector2& operator/= (const float& a_Scalar);
 
 		Vector2& operator= (const Vector2& a_Source);
-		friend bool operator== (const Vector2& a_Lhs, const Vector2& a_Rhs);
+		AIMATH_API friend bool operator== (const Vector2& a_Lhs, const Vector2& a_Rhs);
 
 	};
 
-	class Vector3{
+	class AIMATH_API Vector3{
 	public:
 		Vector3();
 		~Vector3();
@@ -179,11 +187,11 @@ namespace AiMath{
 		Vector3& operator/= (const float& a_Scalar);
 
 		Vector3& operator= (const Vector3& a_Source);
-		friend bool operator==(const Vector3& lhs, const Vector3& rhs);
+		AIMATH_API friend bool operator==(const Vector3& lhs, const Vector3& rhs);
 
 	};
 
-	class Vector4{
+	class AIMATH_API Vector4{
 	public:
 		Vector4();
 		~Vector4();
@@ -223,13 +231,13 @@ namespace AiMath{
 
 		Vector4& operator= (const Vector4& a_Source);
 		bool operator== (const Vector4& a_Source);
-		friend bool operator== (const Vector4& lhs, const Vector4& rhs);
+		AIMATH_API friend bool operator== (const Vector4& lhs, const Vector4& rhs);
 		bool operator!= (const Vector4& rhs);
-		friend bool operator!= (const Vector4& lhs, const Vector4 rhs);
+		AIMATH_API friend bool operator!= (const Vector4& lhs, const Vector4 rhs);
 
 	};
 
-	class Matrix3
+	class AIMATH_API Matrix3
 	{
 	public:
 
@@ -293,20 +301,20 @@ namespace AiMath{
 		Matrix3& operator*= (const Matrix3& a_FactorMatrix);
 		Matrix3& operator*= (const float& a_FactorScalar);
 
-		friend Vector2 operator*(const Matrix3& lhs, const Vector2& rhs);
-		friend Vector3 operator*(const Matrix3& lhs, const Vector3& rhs);
+		AIMATH_API friend Vector2 operator*(const Matrix3& lhs, const Vector2& rhs);
+		AIMATH_API friend Vector3 operator*(const Matrix3& lhs, const Vector3& rhs);
 
 		Matrix3& operator= (const Matrix3& a_Source);
-		friend bool operator== (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
+		AIMATH_API friend bool operator== (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
 
-		friend bool operator!= (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
+		AIMATH_API friend bool operator!= (const Matrix3& a_Lhs, const Matrix3& a_Rhs);
 
 		float* operator[](int rhs);
 
-		friend std::ostream& operator<<(std::ostream& out, const Matrix3& m);
+		AIMATH_API friend std::ostream& operator<<(std::ostream& out, const Matrix3& m);
 	};
 
-	class Matrix4
+	class AIMATH_API Matrix4
 	{
 	public:
 
@@ -353,19 +361,19 @@ namespace AiMath{
 		static Matrix4 SetupTranslation(const Vector3& a_Vector);
 
 		//Operators
-		friend Matrix4 operator+ (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
+		AIMATH_API friend Matrix4 operator+ (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
 		Matrix4& operator+= (const Matrix4& a_AddMatrix);
 
-		friend Matrix4 operator- (const Matrix4& a_SubMatrix);
+		AIMATH_API friend Matrix4 operator- (const Matrix4& a_SubMatrix);
 		Matrix4& operator-= (const Matrix4& a_SubMatrix);
 
-		friend Matrix4 operator* (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
-		friend Vector4 operator*(const Matrix4& a_Lhs, const Vector4& a_Rhs);
+		AIMATH_API friend Matrix4 operator* (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
+		AIMATH_API friend Vector4 operator*(const Matrix4& a_Lhs, const Vector4& a_Rhs);
 		Matrix4& operator*= (const Matrix4& a_FactorMatrix);
 		Matrix4& operator*= (const float& a_FactorScalar);
 
 		Matrix4& operator= (const Matrix4& a_Source);
-		friend bool operator== (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
+		AIMATH_API friend bool operator== (const Matrix4& a_Lhs, const Matrix4& a_Rhs);
 		const bool operator!= (const Matrix4& a_Term);
 
 		float* operator[](int rhs);
