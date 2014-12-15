@@ -16,12 +16,18 @@
 
 namespace AiMath{
 	
+	/*!
+	Designates whether data is pulled as Horizontal or Vertical Major
+	*/
 	enum MATRIX_MAJOR
 	{
 		ROW,
 		COL
 	};
 
+	/*!
+	Designates axis on cartesian plane
+	*/
 	enum AXIS
 	{
 		X,
@@ -30,24 +36,24 @@ namespace AiMath{
 	};
 
 
-	//Common Math Functions
+	///Common Math Functions
 	class AMath{
 	public:
-		//Degrees to radians
+		///Degrees to radians
 		static float DegreesToRadians(float a_angleInDegrees){
 			return a_angleInDegrees * (PI / 180);
 		}
-		//Radians to degrees
+		///Radians to degrees
 		static float RadiansToDegrees(float a_angleInRadians){
 			return a_angleInRadians * (180 / PI);
 		}
-		//Linear Interpolation of percentage between two scalar values
-		//Percent between 0 and 1
+		///Linear Interpolation of percentage between two scalar values
+		///Percent between 0 and 1
 		static float LERP(float a_begin, float a_end, float a_percent){
 			return (a_begin + (a_end - a_begin) * a_percent);
 		}
 
-		//Power of two check
+		///Power of two check
 		static bool IsPowerOfTwo(const unsigned int a_num){
 			unsigned int n = a_num;
 			//shifts bits to the right until it gets a set bit that is most significant or not
@@ -57,7 +63,7 @@ namespace AiMath{
 			return (n == 1);
 		}
 
-		//Get next power of two if not already power of two. Else return given value
+		///Get next power of two if not already power of two. Else return given value
 		static unsigned int GetNextPowerOfTwo(const unsigned int a_value){
 			unsigned int v = a_value;
 			//check case of 0
@@ -65,7 +71,7 @@ namespace AiMath{
 				return 0;
 			}
 
-			/*copy the most significant bit to all lower bits, then add 1 which results in carry that
+			/*!copy the most significant bit to all lower bits, then add 1 which results in carry that
 			sets all lower bits to 0 and one bit beyond to 1.  If the original number was a power of 2
 			then the decrement will reduce it by one less, so then round up to original value.
 			*/
@@ -80,8 +86,8 @@ namespace AiMath{
 			return v;
 		}
 
-		//returns true if given result is within delta of expected result using
-		//formula: (fabs(result - expected) < delta)
+		///returns true if given result is within delta of expected result using
+		///formula: (fabs(result - expected) < delta)
 		static bool FloatEquals(const float& a_result, const float& a_expected, const float a_delta)
 		{
 			return (fabs(a_result - a_expected) < a_delta);
