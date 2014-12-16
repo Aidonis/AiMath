@@ -118,10 +118,10 @@ namespace AiMath{
 		temp.matrix[2][2] = 1;
 		temp.matrix[2][3] = 0;
 
-		temp.matrix[2][0] = 0;
-		temp.matrix[2][1] = 0;
-		temp.matrix[2][2] = 0;
-		temp.matrix[2][3] = 1;
+		temp.matrix[3][0] = 0;
+		temp.matrix[3][1] = 0;
+		temp.matrix[3][2] = 0;
+		temp.matrix[3][3] = 1;
 
 		return temp;
 	}
@@ -134,8 +134,10 @@ namespace AiMath{
 		return temp;
 	}
 
-	//Returns 4x4 orthographic projection
-	Matrix4 Matrix4::OrthographicProjection(const float left, const float right, const float top, const float bottom, const float near, const float far){
+	
+	///Returns 4X4 orthographic projection matrix
+	Matrix4 Matrix4::GetOrthographicProjection(const float left, const float right, const float top, const float bottom, const float near, const float far)
+	{
 		Matrix4 r = Matrix4::Identity();
 		r.matrix[0][0] = 2.0f / (right - left);
 		r.matrix[0][3] = -1.0f * ((right + left) / (right - left));
@@ -256,6 +258,7 @@ namespace AiMath{
 		result.y = row.DotProduct(a_Rhs);
 		row = Matrix4::GetVector4(ROW, 2, a_Lhs);
 		result.z = row.DotProduct(a_Rhs);
+		result.w = 1;
 		return result;
 	}
 

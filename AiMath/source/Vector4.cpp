@@ -156,4 +156,14 @@ namespace AiMath{
 			return false;
 		return true;
 	}
+
+	std::ostream& operator<<(std::ostream& out, const Vector4& rhs)
+	{
+		out << "Vector4 [x:";
+		out << rhs.x << ", y:";
+		out << rhs.y << ", z:";
+		out << rhs.z << ", w:";
+		out << rhs.w << "]";
+		return out;
+	}
 }
