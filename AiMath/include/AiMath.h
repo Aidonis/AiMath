@@ -47,8 +47,9 @@ namespace AiMath{
 		static float RadiansToDegrees(float a_angleInRadians){
 			return a_angleInRadians * (180 / PI);
 		}
-		///Linear Interpolation of percentage between two scalar values
-		///Percent between 0 and 1
+		/*!Linear Interpolation of percentage between two scalar values
+		Percent between 0 and 1
+		*/
 		static float LERP(float a_begin, float a_end, float a_percent){
 			return (a_begin + (a_end - a_begin) * a_percent);
 		}
@@ -86,8 +87,9 @@ namespace AiMath{
 			return v;
 		}
 
-		///returns true if given result is within delta of expected result using
-		///formula: (fabs(result - expected) < delta)
+		/*!returns true if given result is within delta of expected result using
+		formula: (fabs(result - expected) < delta)
+		*/
 		static bool FloatEquals(const float& a_result, const float& a_expected, const float a_delta)
 		{
 			return (fabs(a_result - a_expected) < a_delta);
@@ -95,12 +97,18 @@ namespace AiMath{
 
 	};
 
+	///Representation of 2D Vector
 	class AIMATH_API Vector2{
 	public:
+
+		///Constructor
 		Vector2();
+		///Destructor
 		~Vector2();
 
+		///Initialized Constructor
 		Vector2(float a_x, float a_y);
+		///Copy Constructor
 		Vector2(const Vector2& other);
 		float x, y;
 
@@ -110,8 +118,10 @@ namespace AiMath{
 		///Dot Product between two Vector2
 		float DotProduct(const Vector2& a_Vector);
 
-		///Normalized Vector2
+		///Return a new Vector2 the normal of this
 		Vector2 getNormal();
+
+		///Return this Vector2 normalized
 		Vector2& Normalize();
 
 		///Magnitude of Vector2
@@ -121,7 +131,6 @@ namespace AiMath{
 		Vector2 Lerp(const Vector2& a_TerminatingVector, const float& a_InterpPoint);
 
 		//Operators
-
 		Vector2 operator+ (const Vector2& a_addVector);  //
 		Vector2 operator+ (const float& a_addScalar);  //
 
@@ -145,11 +154,19 @@ namespace AiMath{
 
 	};
 
+	///Representation of 3D Vector
 	class AIMATH_API Vector3{
 	public:
+
+		///Constructor
 		Vector3();
+		///Destructor
 		~Vector3();
 
+		///Copy Constructor
+		Vector3(const Vector3& a_other);
+
+		///Initialized Constructor
 		Vector3(float a_x, float a_y, float a_z);
 
 		float x, y, z;
@@ -162,8 +179,9 @@ namespace AiMath{
 
 		Vector3 CrossProduct(const Vector3 &a_Term);
 
-		///Normalized Vector3
+		///Return a new Vector3 the normal of this
 		Vector3 getNormal();
+		///Return this Vector3 normalized
 		Vector3& Normalize();
 
 		///Magnitude of Vector3
@@ -173,7 +191,6 @@ namespace AiMath{
 		Vector3 Lerp(const Vector3& a_endVector, const float& a_percent);
 
 		//Operators
-
 		Vector3 operator+ (const Vector3& a_addVector);  //
 		Vector3 operator+ (const float& a_addScalar);  //
 
@@ -197,6 +214,7 @@ namespace AiMath{
 
 	};
 
+	///Representation of 2D or 3D Vector
 	class AIMATH_API Vector4{
 	public:
 		Vector4();
@@ -216,15 +234,16 @@ namespace AiMath{
 		///Copy Contructer
 		Vector4(const Vector4& a_other);
 
+		///Return a new Vector4 the magnitude of this
 		float Magnitude();
 
-		///Return the normal of Vector4
+		///Return a new Vector4 the normal of this
 		Vector4 getNormal();
 
-		///Return the original Vector4 normalized
+		///Return this Vector4 normalized
 		Vector4& Normalize();
 
-		///Return DotProduct of Vector4
+		///Return a float the DotProduct of this
 		float DotProduct(const Vector4& other);
 
 		//Operators
@@ -243,10 +262,11 @@ namespace AiMath{
 		bool operator!= (const Vector4& rhs);
 		AIMATH_API friend bool operator!= (const Vector4& lhs, const Vector4 rhs);
 
-		///Overloaded cout operator to display Vector4
+		//Overload std::cout operator
 		AIMATH_API friend  std::ostream& operator<<(std::ostream& out, const Vector4& rhs);
 	};
 
+	///3x3 Transformation Matrix
 	class AIMATH_API Matrix3
 	{
 	public:
@@ -277,6 +297,7 @@ namespace AiMath{
 		///Returns a new matrix the transpose of this matrix
 		Matrix3 GetTranspose();
 
+		///Returns transformed Vector3
 		Vector3 VectorTransform(const Vector3 &a_Point);
 
 		///Return Identity Matrix
@@ -322,16 +343,18 @@ namespace AiMath{
 
 		float* operator[](int rhs);
 
-		//Overloaded std::cout operator
+		//Overload std::cout operator
 		AIMATH_API friend std::ostream& operator<<(std::ostream& out, const Matrix3& m);
 	};
 
+	///4x4 Transformation Matrix
 	class AIMATH_API Matrix4
 	{
 	public:
 
+		///Constructor
 		Matrix4();
-
+		///Initialized Constructor
 		Matrix4(const float& a_00,
 			const float& a_01,
 			const float& a_02,
@@ -349,13 +372,15 @@ namespace AiMath{
 			const float& a_32,
 			const float& a_33);
 
-
+		///Copy Constructor
 		Matrix4(const Matrix4& a_Source);
 
 		float matrix[4][4];
 
+		///Destructor
 		~Matrix4();
 
+		///Return Vector4 of given column or row
 		static Vector4 GetVector4(MATRIX_MAJOR type, int index, const Matrix4& matrix);
 
 		///Return this matrix transposed
@@ -367,12 +392,16 @@ namespace AiMath{
 		Vector3 VectorTransform(const Vector3 &a_Point);
 		static Matrix4 GetOrthographicProjection(const float left, const float right, const float top, const float bottom, const float near, const float far);
 
+		///Return a new Matrix4 the identity of this
 		static Matrix4 Identity();
 		
+		///Return a new rotation Matrix4 from the given angle in radians around given AXIS
 		static Matrix4 SetupRotation(AXIS a_Axis, float a_Radians);
 
+		///Return a new scale Matrix4
 		static Matrix4 SetupScale(const Vector3& a_Vector);
 
+		///Return new translation Matrix4
 		static Matrix4 SetupTranslation(const Vector3& a_Vector);
 
 		//Operators
@@ -392,6 +421,7 @@ namespace AiMath{
 
 		float* operator[](int rhs);
 
+		//Overload std::cout operator
 		AIMATH_API friend  std::ostream& operator<<(std::ostream& out, const Matrix4& m);
 	};
 }

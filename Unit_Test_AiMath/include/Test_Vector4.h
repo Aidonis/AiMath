@@ -66,8 +66,6 @@ TEST(vector4, normalize)
 	v2 = v1.getNormal();
 	EXPECT_TRUE(v2 == v1);
 	Vector4 v3(0, 0, 0, 0);
-	//v2 = v3.Normalize();
-	//EXPECT_TRUE(v3 == v2);
 }
 
 TEST(vector4, dotProduct)

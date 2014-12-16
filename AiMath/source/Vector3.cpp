@@ -16,7 +16,12 @@ namespace AiMath
 	}
 
 	Vector3::~Vector3(){
+	}
 
+	Vector3::Vector3(const Vector3& a_other){
+		x = a_other.x;
+		y = a_other.y;
+		z = a_other.z;
 	}
 
 	float Vector3::EulerAngle(const Vector3& a_Vector){

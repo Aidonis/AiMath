@@ -34,6 +34,14 @@ TEST(vector3, constructorOverload){
 	EXPECT_FLOAT_EQ(5, v.z);
 }
 
+TEST(vector3, copyConstructor){
+	Vector3 v(1, 2, 3);
+	Vector3 v2(v);
+	EXPECT_EQ(v, v2);
+	EXPECT_EQ(v, v);
+
+}
+
 TEST(vector3, dotProduct){
 	Vector3 v1(1,2,2);
 	Vector3 v2(2,3,6);

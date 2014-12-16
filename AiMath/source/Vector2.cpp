@@ -13,10 +13,10 @@ namespace AiMath
 		y = a_y;
 	}
 
-	Vector2::Vector2(const Vector2& other)
+	Vector2::Vector2(const Vector2& a_other)
 	{
-		x = other.x;
-		y = other.y;
+		x = a_other.x;
+		y = a_other.y;
 	}
 
 	Vector2::~Vector2(){

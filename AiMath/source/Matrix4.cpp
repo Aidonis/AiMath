@@ -236,7 +236,6 @@ namespace AiMath{
 
 	Matrix4& Matrix4::operator*=(const Matrix4& a_Rhs)
 	{
-		//need to use a temp because use the object during the process and can't modify during.
 		Matrix4 result;
 		for (int row = 0; row < 4; row++)
 		{
