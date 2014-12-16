@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>AiMath Documentation: Member List</title>
+<title>AiMath: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">AiMath Documentation
+   <div id="projectname">AiMath
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Basic Math Library</div>
   </td>
@@ -65,6 +73,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_ai_math_1_1_matrix4.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>AiMath</b></li><li class="navelem"><a class="el" href="class_ai_math_1_1_matrix4.html">Matrix4</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AiMath::Matrix4 Member List</div>  </div>
@@ -92,38 +110,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetTranspose</b>() (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>GetVector4</b>(MATRIX_MAJOR type, int index, const Matrix4 &amp;matrix) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Identity</b>() (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>matrix</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Matrix4</b>() (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Matrix4</b>(const float &amp;a_00, const float &amp;a_01, const float &amp;a_02, const float &amp;a_03, const float &amp;a_10, const float &amp;a_11, const float &amp;a_12, const float &amp;a_13, const float &amp;a_20, const float &amp;a_21, const float &amp;a_22, const float &amp;a_23, const float &amp;a_30, const float &amp;a_31, const float &amp;a_32, const float &amp;a_33) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Matrix4</b>(const Matrix4 &amp;a_Source) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator!=</b>(const Matrix4 &amp;a_Term) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator*</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#adcfe06612d6ebad411d975511d34fbb0">GetOrthographicProjection</a>(const float left, const float right, const float top, const float bottom, const float near, const float far)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#acd68955f2628b1d9bbcae15de9ff4e48">GetTranspose</a>()</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a3654f5f9ad8e7e8f7e6a0a817a0dcd39">GetVector4</a>(MATRIX_MAJOR type, int index, const Matrix4 &amp;matrix)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a9ad241a9019c4847244f9c4f1421b641">Identity</a>()</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>matrix</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a70a2e0bd0df9a70069c6a8ebc133715c">Matrix4</a>()</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a010a10dc5f24a1cd0a4b06ec7f928177">Matrix4</a>(const float &amp;a_00, const float &amp;a_01, const float &amp;a_02, const float &amp;a_03, const float &amp;a_10, const float &amp;a_11, const float &amp;a_12, const float &amp;a_13, const float &amp;a_20, const float &amp;a_21, const float &amp;a_22, const float &amp;a_23, const float &amp;a_30, const float &amp;a_31, const float &amp;a_32, const float &amp;a_33)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#ac89260fba1d2c7ddf72c297a470157f6">Matrix4</a>(const Matrix4 &amp;a_Source)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator!=</b>(const Matrix4 &amp;a_Term) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>operator*</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator*=</b>(const Matrix4 &amp;a_FactorMatrix) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator*=</b>(const float &amp;a_FactorScalar) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator*</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator*=</b>(const Matrix4 &amp;a_FactorMatrix) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator+</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>operator+=</b>(const Matrix4 &amp;a_AddMatrix) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator-</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>operator-=</b>(const Matrix4 &amp;a_SubMatrix) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(const Matrix4 &amp;a_Source) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator==</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator[]</b>(int rhs) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>OrthographicProjection</b>(const float left, const float right, const float top, const float bottom, const float near, const float far) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetupRotation</b>(AXIS a_Axis, float a_Radians) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>SetupScale</b>(const Vector3 &amp;a_Vector) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetupTranslation</b>(const Vector3 &amp;a_Vector) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Transpose</b>() (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>VectorTransform</b>(const Vector3 &amp;a_Point) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~Matrix4</b>() (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator&lt;&lt;</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator=</b>(const Matrix4 &amp;a_Source) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator==</b> (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator[]</b>(int rhs) (defined in <a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a>)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a2de81e80302324d87005e5ebffeabc2a">SetupRotation</a>(AXIS a_Axis, float a_Radians)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a3d06367fd6ebfed8a4b9cae3190df9f3">SetupScale</a>(const Vector3 &amp;a_Vector)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a71d3a146db94e40dc4212fa8ed0078ef">SetupTranslation</a>(const Vector3 &amp;a_Vector)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#ad35c8d03d50dcf5ea96e385776e473fd">Transpose</a>()</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#a02ecd8769e94eae3f369f45022b6ef71">VectorTransform</a>(const Vector3 &amp;a_Point)</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html#af33a3273d66fd20e41a5b0b2368c9f94">~Matrix4</a>()</td><td class="entry"><a class="el" href="class_ai_math_1_1_matrix4.html">AiMath::Matrix4</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 15 2014 14:25:22 for AiMath Documentation by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Tue Dec 16 2014 09:52:52 for AiMath by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

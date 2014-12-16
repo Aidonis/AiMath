@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>AiMath Documentation: AiMath::Matrix3 Class Reference</title>
+<title>AiMath: AiMath::Matrix3 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,7 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">AiMath Documentation
+   <div id="projectname">AiMath
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Basic Math Library</div>
   </td>
@@ -65,6 +73,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_ai_math_1_1_matrix3.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>AiMath</b></li><li class="navelem"><a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -95,6 +113,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AiMath::Matrix3 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>3x3 Transformation Matrix  
+ <a href="class_ai_math_1_1_matrix3.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ai_math_8h_source.html">AiMath.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,13 +128,16 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Matrix3</b> (const float &amp;a_00, const float &amp;a_01, const float &amp;a_02, const float &amp;a_10, const float &amp;a_11, const float &amp;a_12, const float &amp;a_20, const float &amp;a_21, const float &amp;a_22)</td></tr>
 <tr class="separator:a993b32f4adb46c9572f12b092372d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af03b471201fcacacffdb1373fdd1efb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af03b471201fcacacffdb1373fdd1efb8"></a>
-<a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Transpose</b> ()</td></tr>
+<a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#af03b471201fcacacffdb1373fdd1efb8">Transpose</a> ()</td></tr>
+<tr class="memdesc:af03b471201fcacacffdb1373fdd1efb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns this matrix transposed. <br /></td></tr>
 <tr class="separator:af03b471201fcacacffdb1373fdd1efb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f8be1f91bf95afcf5c18d12a8ede7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44f8be1f91bf95afcf5c18d12a8ede7e"></a>
-<a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetTranspose</b> ()</td></tr>
+<a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a44f8be1f91bf95afcf5c18d12a8ede7e">GetTranspose</a> ()</td></tr>
+<tr class="memdesc:a44f8be1f91bf95afcf5c18d12a8ede7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new matrix the transpose of this matrix. <br /></td></tr>
 <tr class="separator:a44f8be1f91bf95afcf5c18d12a8ede7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f188cf91a55d23b05a18cc0ccbf767d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f188cf91a55d23b05a18cc0ccbf767d"></a>
-<a class="el" href="class_ai_math_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>VectorTransform</b> (const <a class="el" href="class_ai_math_1_1_vector3.html">Vector3</a> &amp;a_Point)</td></tr>
+<a class="el" href="class_ai_math_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a3f188cf91a55d23b05a18cc0ccbf767d">VectorTransform</a> (const <a class="el" href="class_ai_math_1_1_vector3.html">Vector3</a> &amp;a_Point)</td></tr>
+<tr class="memdesc:a3f188cf91a55d23b05a18cc0ccbf767d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns transformed <a class="el" href="class_ai_math_1_1_vector3.html" title="Representation of 3D Vector. ">Vector3</a>. <br /></td></tr>
 <tr class="separator:a3f188cf91a55d23b05a18cc0ccbf767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f9b8719344dafdcfacdf67e36c3b8bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f9b8719344dafdcfacdf67e36c3b8bf"></a>
 <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> &amp;a_AddMatrix)</td></tr>
@@ -162,19 +188,22 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="class_ai_math_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetVector3</b> (MATRIX_MAJOR type, int index, const <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> &amp;matrix)</td></tr>
 <tr class="separator:a084dd6672ff56d16eeffe4fdb6f5adfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac148b01436f7665fcd90d1d30af9db39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac148b01436f7665fcd90d1d30af9db39"></a>
-static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Identity</b> ()</td></tr>
+static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#ac148b01436f7665fcd90d1d30af9db39">Identity</a> ()</td></tr>
+<tr class="memdesc:ac148b01436f7665fcd90d1d30af9db39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return Identity Matrix. <br /></td></tr>
 <tr class="separator:ac148b01436f7665fcd90d1d30af9db39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c199b205dcab166ac51a2cef8a6001b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c199b205dcab166ac51a2cef8a6001b"></a>
-static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>OrthographicProjection</b> ()</td></tr>
+static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a7c199b205dcab166ac51a2cef8a6001b">OrthographicProjection</a> ()</td></tr>
+<tr class="memdesc:a7c199b205dcab166ac51a2cef8a6001b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 3x3 orthographic projection matrix. <br /></td></tr>
 <tr class="separator:a7c199b205dcab166ac51a2cef8a6001b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9536cf6c042ed7b6d4d1cab2612c030d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9536cf6c042ed7b6d4d1cab2612c030d"></a>
-static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetupRotation</b> (float a_Radians)</td></tr>
+<tr class="memitem:a9536cf6c042ed7b6d4d1cab2612c030d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a9536cf6c042ed7b6d4d1cab2612c030d">SetupRotation</a> (float a_Radians)</td></tr>
 <tr class="separator:a9536cf6c042ed7b6d4d1cab2612c030d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81c8db6ec6da6781d87f484913335c0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81c8db6ec6da6781d87f484913335c0c"></a>
-static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetupTranslation</b> (<a class="el" href="class_ai_math_1_1_vector2.html">Vector2</a> &amp;a_Translation)</td></tr>
+static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a81c8db6ec6da6781d87f484913335c0c">SetupTranslation</a> (<a class="el" href="class_ai_math_1_1_vector2.html">Vector2</a> &amp;a_Translation)</td></tr>
+<tr class="memdesc:a81c8db6ec6da6781d87f484913335c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns new translation matrix. <br /></td></tr>
 <tr class="separator:a81c8db6ec6da6781d87f484913335c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806139ef7116069b734eaeb94c3e748c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a806139ef7116069b734eaeb94c3e748c"></a>
-static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetupScale</b> (<a class="el" href="class_ai_math_1_1_vector2.html">Vector2</a> &amp;a_Scale)</td></tr>
+static <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_math_1_1_matrix3.html#a806139ef7116069b734eaeb94c3e748c">SetupScale</a> (<a class="el" href="class_ai_math_1_1_vector2.html">Vector2</a> &amp;a_Scale)</td></tr>
+<tr class="memdesc:a806139ef7116069b734eaeb94c3e748c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns new scaled matrix. <br /></td></tr>
 <tr class="separator:a806139ef7116069b734eaeb94c3e748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -201,16 +230,48 @@ AIMATH_API friend bool&#160;</td><td class="memItemRight" valign="bottom"><b>ope
 AIMATH_API friend std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> &amp;m)</td></tr>
 <tr class="separator:a1750f64266cfe896da464c809ae40257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>3x3 Transformation Matrix </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9536cf6c042ed7b6d4d1cab2612c030d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a> AiMath::Matrix3::SetupRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_Radians</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns new rotation matrix. Radians &gt; 0 = counterclockwise rotation Radians &lt; 0 = clockwise rotation </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>AiMath/include/<a class="el" href="_ai_math_8h_source.html">AiMath.h</a></li>
-<li>AiMath/source/Matrix3.cpp</li>
+<li>AiMath/AiMath/include/<a class="el" href="_ai_math_8h_source.html">AiMath.h</a></li>
+<li>AiMath/AiMath/source/Matrix3.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 15 2014 14:25:22 for AiMath Documentation by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>AiMath</b></li><li class="navelem"><a class="el" href="class_ai_math_1_1_matrix3.html">Matrix3</a></li>
+    <li class="footer">Generated on Tue Dec 16 2014 09:52:52 for AiMath by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

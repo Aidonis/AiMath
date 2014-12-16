@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['floatequals',['FloatEquals',['../class_ai_math_1_1_a_math.html#a8a2922e06ea11ae2938bc57a8d138ad3',1,'AiMath::AMath']]]
+  ['eulerangle',['EulerAngle',['../class_ai_math_1_1_vector2.html#aa84960c543b2374169adfebb27e0bfaa',1,'AiMath::Vector2::EulerAngle()'],['../class_ai_math_1_1_vector3.html#a226a8807e38a2cdd1a1c3d0ed4925c30',1,'AiMath::Vector3::EulerAngle()']]]
 ];

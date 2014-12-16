@@ -1,0 +1,28 @@
+var class_ai_math_1_1_vector4 =
+[
+    [ "Vector4", "class_ai_math_1_1_vector4.html#a52b1556fe38600ede1a59022a29770e9", null ],
+    [ "~Vector4", "class_ai_math_1_1_vector4.html#afd288e1f817867879c7cd9cd053f511c", null ],
+    [ "Vector4", "class_ai_math_1_1_vector4.html#ac532206caebf7a6378f659f862f1536b", null ],
+    [ "Vector4", "class_ai_math_1_1_vector4.html#aae099515772fa52fa3f1841e7e61bfcf", null ],
+    [ "Vector4", "class_ai_math_1_1_vector4.html#a8ace62b38d1387cad2ad6d2c1bf55c62", null ],
+    [ "DotProduct", "class_ai_math_1_1_vector4.html#ac136139bae3e45132d11865ad889c5ee", null ],
+    [ "getNormal", "class_ai_math_1_1_vector4.html#a9696e8c5db47a97ada36922457eb0a6f", null ],
+    [ "Magnitude", "class_ai_math_1_1_vector4.html#a62f02aac3323b3011b55178aab6e51e9", null ],
+    [ "Normalize", "class_ai_math_1_1_vector4.html#a19e9442b40f987f62010fcf847d55421", null ],
+    [ "operator!=", "class_ai_math_1_1_vector4.html#ac02ca33d7d5fd1d7d2f3b90ad7952433", null ],
+    [ "operator*", "class_ai_math_1_1_vector4.html#a9ba1d0b33560c3eddf92015287f1cdf0", null ],
+    [ "operator*=", "class_ai_math_1_1_vector4.html#a16356d9e859806c918d1cbe72ea99d9b", null ],
+    [ "operator+", "class_ai_math_1_1_vector4.html#a8b4aae3009f9d99ba71d99588302ce27", null ],
+    [ "operator+=", "class_ai_math_1_1_vector4.html#aa0639853e7ab70b9ccff90599a076648", null ],
+    [ "operator-", "class_ai_math_1_1_vector4.html#a2a5d203da7a57217ffd82d916c82345a", null ],
+    [ "operator-=", "class_ai_math_1_1_vector4.html#a29713bf59af9720af6f69df4a1f2c624", null ],
+    [ "operator=", "class_ai_math_1_1_vector4.html#a406b16e22c8deb3218a716eefcf348ce", null ],
+    [ "operator==", "class_ai_math_1_1_vector4.html#a4ccf9111ac6f3f6a03756abd4cbea57d", null ],
+    [ "operator!=", "class_ai_math_1_1_vector4.html#a5088c44c5df3d2a3a98f484e3b860c0a", null ],
+    [ "operator<<", "class_ai_math_1_1_vector4.html#ac876c5a8821dc1d21685009dc2196c97", null ],
+    [ "operator==", "class_ai_math_1_1_vector4.html#a25984ac1dbdff4ae0bca4a990069f911", null ],
+    [ "w", "class_ai_math_1_1_vector4.html#a728127f284281d1fd39a31ff6dba910d", null ],
+    [ "x", "class_ai_math_1_1_vector4.html#a518497574690c3511c77a9876e179d61", null ],
+    [ "y", "class_ai_math_1_1_vector4.html#ac81198522c850d38d7f765459298ee59", null ],
+    [ "z", "class_ai_math_1_1_vector4.html#a3e4d29e783b466fec6081c59bee82b3d", null ]
+];

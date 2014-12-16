@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getnextpoweroftwo',['GetNextPowerOfTwo',['../class_ai_math_1_1_a_math.html#aaf28e85c9da7d5085d811f43a8dd1160',1,'AiMath::AMath']]]
+  ['floatequals',['FloatEquals',['../class_ai_math_1_1_a_math.html#a8a2922e06ea11ae2938bc57a8d138ad3',1,'AiMath::AMath']]]
 ];
